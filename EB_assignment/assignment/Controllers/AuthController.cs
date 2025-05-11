@@ -11,7 +11,7 @@ namespace assignment.Controllers
         
         private static HttpClient httpClient = new()
         {
-            BaseAddress = new Uri("http://localhost:5263/api/"),
+            BaseAddress = new Uri("http://localhost:5263/api/Auth/"),
         };
 
         [HttpGet]
@@ -21,19 +21,22 @@ namespace assignment.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(LoginModel login)
+        public async Task<IActionResult> Register(RegisterModel regi)
         {
-            StringContent jsonContent = new(JsonConvert.SerializeObject(login), Encoding.UTF8,"application/json"); 
-            HttpResponseMessage response = await httpClient.PostAsync("api/Auth/Register", jsonContent);
+            StringContent jsonContent = new(JsonConvert.SerializeObject(regi), Encoding.UTF8,"application/json"); 
+            HttpResponseMessage response = await httpClient.PostAsync("Register", jsonContent);
 
             if (response.IsSuccessStatusCode)
             {
                 var jsonResponse = await response.Content.ReadAsStringAsync();
                 AuthResponse? deserialisedResponse = JsonConvert.DeserializeObject<AuthResponse>(jsonResponse);
-                
+                 TempData["ToastrMessage"] = "Registration successful!";
+                TempData["ToastrType"] = "success";
                 return View("Login");                
             } else
             {
+                TempData["ToastrMessage"] = "Registration failed!";
+                TempData["ToastrType"] = "error";
                 ViewBag.Result = "An error has occurred";
                 return View();
             }
@@ -49,7 +52,7 @@ namespace assignment.Controllers
         public async Task<IActionResult> Login(LoginModel login)
         {
             StringContent jsonContent = new(JsonConvert.SerializeObject(login), Encoding.UTF8,"application/json"); 
-            HttpResponseMessage response = await httpClient.PostAsync("Auth/Login", jsonContent);
+            HttpResponseMessage response = await httpClient.PostAsync("Login", jsonContent);
 
             if (response.IsSuccessStatusCode)
             {

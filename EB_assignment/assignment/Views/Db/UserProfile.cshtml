@@ -1,0 +1,39 @@
+@model assignment.Models.RegisterModel
+
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm rounded">
+        <div class="card-header bg-primary text-white">
+            <h4>User Profile</h4>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-action="UpdateUserProfile">
+                <div class="form-group mb-3">
+                    <label>User Role</label>
+                    <input type="text" class="form-control" value="@Model.userRole" readonly />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>First Name</label>
+                    <input asp-for="firstName" class="form-control" />
+                    <span asp-validation-for="firstName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>Last Name</label>
+                    <input asp-for="lastName" class="form-control" />
+                    <span asp-validation-for="lastName" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-success">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

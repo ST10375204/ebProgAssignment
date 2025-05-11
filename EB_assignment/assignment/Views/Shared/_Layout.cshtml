@@ -11,6 +11,8 @@
 
     <!--Toastr CSS via CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" />
+    <!--  Font Awesome for image-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
 </head>
 
@@ -28,20 +30,36 @@
                     </ul>
                     <ul class="navbar-nav">
                         @{
+                          
+
                             if (Context.Session.GetString("currentUser") == null)
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Auth"
+                                        asp-action="Register">Register</a>
+                                </li>
                             }
                             else
                             {
+                                  <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Db"
+                                    asp-action="AddProduct">AddProduct</a>
+                            </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Logout">Logout</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Db" asp-action="UserProfile"  asp-route-userId="@Context.Session.GetString("currentUser")">
+                                        <i class="fas fa-user"></i> Profile
+                                    </a>
                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Db" asp-action="AddProduct">AddProduct</a>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Auth"
+                                        asp-action="Logout">Logout</a>
                                 </li>
+
                             }
                         }
                     </ul>
@@ -64,36 +82,36 @@
 
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
-    
+
     <!--notif trigger for toastrs so that they can be displayed app wide w/o remaking in other htmls -->
-<script>
-    $(document).ready(function () {
-        const message = '@TempData["ToastrMessage"]';
-        const type = '@TempData["ToastrType"]';
+    <script>
+        $(document).ready(function () {
+            const message = '@TempData["ToastrMessage"]';
+            const type = '@TempData["ToastrType"]';
 
-        if (message && type) {
-            toastr.options = {
-                positionClass: 'toast-top-center', 
-                timeOut: 5000,
-            };
+            if (message && type) {
+                toastr.options = {
+                    positionClass: 'toast-top-center',
+                    timeOut: 5000,
+                };
 
-            switch (type) {
-                case "success":
-                    toastr.success(message);
-                    break;
-                case "error":
-                    toastr.error(message);
-                    break;
-                case "warning":
-                    toastr.warning(message);
-                    break;
-                case "info":
-                    toastr.info(message);
-                    break;
+                switch (type) {
+                    case "success":
+                        toastr.success(message);
+                        break;
+                    case "error":
+                        toastr.error(message);
+                        break;
+                    case "warning":
+                        toastr.warning(message);
+                        break;
+                    case "info":
+                        toastr.info(message);
+                        break;
+                }
             }
-        }
-    });
-</script>
+        });
+    </script>
 
 
     @await RenderSectionAsync("Scripts", required: false)

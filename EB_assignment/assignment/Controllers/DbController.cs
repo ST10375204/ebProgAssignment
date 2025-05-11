@@ -12,7 +12,7 @@ namespace assignment.Controllers
     {
         private static HttpClient httpClient = new()
         {
-            BaseAddress = new Uri("http://localhost:5263/api/"),
+            BaseAddress = new Uri("http://localhost:5263/api/Db/"),
         };
 
         [HttpGet]
@@ -46,7 +46,7 @@ namespace assignment.Controllers
                     form.Add(imageContent, "image", image.FileName);
                 }
 
-                var response = await httpClient.PostAsync("Db/UploadProduct", form);
+                var response = await httpClient.PostAsync("UploadProduct", form);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -65,7 +65,42 @@ namespace assignment.Controllers
 
         }
 
+        [HttpGet]
+        public async Task<IActionResult> UserProfile(string userId)
+        {
+            var response = await httpClient.GetAsync($"GetUserDetails?userId={userId}");
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                var userData = JsonConvert.DeserializeObject<RegisterModel>(jsonString);
+                return View(userData);
+            }
+            else
+            {
+                TempData["ToastrMessage"] = "User not found.";
+                TempData["ToastrType"] = "error";
+                return RedirectToAction("Index");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateUserProfile(RegisterModel model)
+        {
+            var response = await httpClient.PostAsync(
+                $"UpdateUser?userId={HttpContext.Session.GetString("currentUser")}&lastName={model.lastName}&firstName={model.firstName}", null);
 
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["ToastrMessage"] = "Updated profile!";
+                TempData["ToastrType"] = "success";
+                return RedirectToAction("UserProfile", new { userId = HttpContext.Session.GetString("currentUser")});
+            }
+            else
+            {
+                TempData["ToastrMessage"] = "Unable to update profile";
+                TempData["ToastrType"] = "error";
+                return RedirectToAction("Index");
+            }
+        }
 
     }
 }
