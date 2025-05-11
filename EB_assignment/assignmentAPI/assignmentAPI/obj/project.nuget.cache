@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7Dcm42uzCKw=",
+  "dgSpecHash": "NihgTeSuf5o=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lab_services_student\\Desktop\\EB_assignment\\assignmentAPI\\assignmentAPI\\assignmentAPI.csproj",
+  "projectFilePath": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignmentAPI\\assignmentAPI\\assignmentAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lab_services_student\\.nuget\\packages\\firebase.auth\\1.0.0\\firebase.auth.1.0.0.nupkg.sha512",
     "C:\\Users\\lab_services_student\\.nuget\\packages\\google.api.commonprotos\\2.16.0\\google.api.commonprotos.2.16.0.nupkg.sha512",

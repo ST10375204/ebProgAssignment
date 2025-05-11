@@ -31,33 +31,28 @@ namespace assignmentAPI.Controllers
 
 
         [HttpPost("UploadProduct")]
-        public async Task<IActionResult> UploadProduct([FromForm] itemModel model, IFormFile image)
+        public async Task<IActionResult> UploadProduct([FromForm] string model, IFormFile? image)
         {
+            var item = JsonConvert.DeserializeObject<itemModel>(model);
 
             var imgUrl = await SaveImage(image);
+            item.imgUrl = imgUrl ?? "";
 
+            Dictionary<string, object> itemData = new Dictionary<string, object>
+    {
+        { "itemName", item.itemName },
+        { "itemCategory", item.itemCategory },
+        { "itemDesc", item.itemDesc ?? "" },
+        { "itemPrice", item.itemPrice ?? 0.0 },
+        { "productionDate", item.productionDate ?? "" },
+        { "imgUrl", item.imgUrl ?? "" },
+        { "userID", item.userID ?? "" }//done for testing purposes
+    };
 
-            model.imgUrl = imgUrl ?? "";
-            //its nullable so even if a user doesnt select an image its all good
-
-            Dictionary<string, object> item = new Dictionary<string, object>
-        {
-            { "itemName", model.itemName },
-            { "itemCategory", model.itemCategory },
-            { "itemDesc", model.itemDesc ?? "" },
-            { "itemPrice", model.itemPrice ?? 0.0 },
-            { "productionDate", model.productionDate ?? "" },
-            { "imgUrl", model.imgUrl ?? "" },
-            { "userID", model.userID ?? "" }
-        };
-
-            // Add to Firestore
             CollectionReference colRef = db.Collection("Products");
-            DocumentReference docRef = await colRef.AddAsync(item);
+            DocumentReference docRef = await colRef.AddAsync(itemData);
 
-            // Return success response with product ID
             return Ok(new { message = "Product uploaded successfully", productId = docRef.Id });
-
         }
 
 
@@ -73,73 +68,61 @@ namespace assignmentAPI.Controllers
             return Ok(new { imageUrl = imgUrl });
         }
 
-        public async Task<string> SaveImage(IFormFile image)
+public async Task<string> SaveImage(IFormFile image)
+{
+    if (image == null || image.Length == 0)
+        return string.Empty; // gracefully exit
+
+    string imgUrl = string.Empty;
+
+    try
+    {
+        string clientId = Environment.GetEnvironmentVariable("imgurClientID");
+        string clientSecret = Environment.GetEnvironmentVariable("imgurClientSecret");
+
+        if (string.IsNullOrEmpty(clientId) || string.IsNullOrEmpty(clientSecret))
+            throw new InvalidOperationException("Imgur Client ID or Client Secret is missing.");
+
+        string accessToken = await GetAccessToken();
+
+        if (string.IsNullOrEmpty(accessToken))
+            throw new InvalidOperationException("Failed to retrieve access token.");
+
+        using (var ms = new MemoryStream())
         {
-            string imgUrl = string.Empty;
+            await image.CopyToAsync(ms);
+            byte[] imageBytes = ms.ToArray();
 
-            try
+            var client = new RestClient("https://api.imgur.com/3/image");
+            var request = new RestRequest();
+            request.Method = Method.Post;
+            request.AddHeader("Authorization", "Bearer " + accessToken);
+            request.AddParameter("image", Convert.ToBase64String(imageBytes));
+            request.AddParameter("title", "userImage");
+
+            RestResponse response = await client.ExecuteAsync(request);
+
+            if (response.IsSuccessful)
             {
-
-                if (image == null || image.Length == 0)
-                    throw new ArgumentException("Image file is empty.");
-
-                string clientId = Environment.GetEnvironmentVariable("imgurClientID");
-                string clientSecret = Environment.GetEnvironmentVariable("imgurClientSecret");
-
-                if (string.IsNullOrEmpty(clientId) || string.IsNullOrEmpty(clientSecret))
-                {
-                    throw new InvalidOperationException("Imgur Client ID or Client Secret is missing.");
-                }
-
-
-                string accessToken = await GetAccessToken();
-
-
-                if (string.IsNullOrEmpty(accessToken))
-                {
-                    throw new InvalidOperationException("Failed to retrieve access token.");
-                }
-
-
-                using (var ms = new MemoryStream())
-                {
-                    await image.CopyToAsync(ms);
-                    byte[] imageBytes = ms.ToArray();
-
-                    var client = new RestClient("https://api.imgur.com/3/image");
-                    var request = new RestRequest();
-                    request.Method = Method.Post;
-
-
-                    request.AddHeader("Authorization", "Bearer " + accessToken);
-
-
-                    request.AddParameter("image", Convert.ToBase64String(imageBytes));
-                    request.AddParameter("title", "userImage");
-
-
-                    RestResponse response = await client.ExecuteAsync(request);
-
-                    if (response.IsSuccessful)
-                    {
-
-                        var jsonResponse = JObject.Parse(response.Content);
-                        imgUrl = jsonResponse["data"]?["link"]?.ToString();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Imgur Upload Failed: " + response.ErrorMessage);
-                        throw new InvalidOperationException("Imgur upload failed: " + response.ErrorMessage);
-                    }
-                }
+                var jsonResponse = JObject.Parse(response.Content);
+                imgUrl = jsonResponse["data"]?["link"]?.ToString();
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine("Error uploading image: " + ex.Message); //will trigger if user doenst select an image but no big deal since its console
+                Console.WriteLine("Imgur Upload Failed: " + response.ErrorMessage);
+                throw new InvalidOperationException("Imgur upload failed: " + response.ErrorMessage);
             }
-            Console.WriteLine(imgUrl);
-            return imgUrl;
         }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Error uploading image: " + ex.Message);
+        
+    }
+
+    return imgUrl;
+}
+
 
         private async Task<string> GetAccessToken()
         {

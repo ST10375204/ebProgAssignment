@@ -5530,11 +5530,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lab_services_student\\Desktop\\EB_assignment\\assignmentAPI\\assignmentAPI\\assignmentAPI.csproj",
+      "projectUniqueName": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignmentAPI\\assignmentAPI\\assignmentAPI.csproj",
       "projectName": "assignmentAPI",
-      "projectPath": "C:\\Users\\lab_services_student\\Desktop\\EB_assignment\\assignmentAPI\\assignmentAPI\\assignmentAPI.csproj",
+      "projectPath": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignmentAPI\\assignmentAPI\\assignmentAPI.csproj",
       "packagesPath": "C:\\Users\\lab_services_student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lab_services_student\\Desktop\\EB_assignment\\assignmentAPI\\assignmentAPI\\obj\\",
+      "outputPath": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignmentAPI\\assignmentAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

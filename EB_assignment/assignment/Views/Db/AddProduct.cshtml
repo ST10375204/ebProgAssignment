@@ -1,0 +1,51 @@
+@model assignment.Models.itemModel
+
+@{
+    ViewData["Title"] = "Upload Product";
+}
+
+<h2>Upload Product</h2>
+
+<form asp-action="UploadProduct" asp-controller="Db" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">Item Name</label>
+        <input asp-for="itemName" class="form-control" />
+        <span asp-validation-for="itemName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input asp-for="itemCategory" class="form-control" />
+        <span asp-validation-for="itemCategory" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea asp-for="itemDesc" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input asp-for="itemPrice" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Production Date</label>
+        <input asp-for="productionDate" type="date" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input type="file" name="image" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <input type="hidden" asp-for="userID" value="@Context.Session.GetString("currentUser")" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Upload Product</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

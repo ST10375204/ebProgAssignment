@@ -1,25 +1,30 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MathApp</title>
+    <title>@ViewData["Title"] - Assignment</title>
+
+    <!--Bootstrap CSS-->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/MathApp.styles.css" asp-append-version="true" />
+
+    <!--Toastr CSS via CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" />
+
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MathApp</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Green Energy Thing</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        
                     </ul>
                     <ul class="navbar-nav">
                         @{
@@ -28,11 +33,15 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
                                 </li>
-                            } else
+                            }
+                            else
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Logout">Logout</a>
-                                </li>                                
+                                </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Db" asp-action="AddProduct">AddProduct</a>
+                                </li>
                             }
                         }
                     </ul>
@@ -40,16 +49,54 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-
+    <!--jQuery-->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <!--Bootstrap Bundle-->
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Toastr JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+    
+    <!--notif trigger for toastrs so that they can be displayed app wide w/o remaking in other htmls -->
+<script>
+    $(document).ready(function () {
+        const message = '@TempData["ToastrMessage"]';
+        const type = '@TempData["ToastrType"]';
+
+        if (message && type) {
+            toastr.options = {
+                positionClass: 'toast-top-center', 
+                timeOut: 5000,
+            };
+
+            switch (type) {
+                case "success":
+                    toastr.success(message);
+                    break;
+                case "error":
+                    toastr.error(message);
+                    break;
+                case "warning":
+                    toastr.warning(message);
+                    break;
+                case "info":
+                    toastr.info(message);
+                    break;
+            }
+        }
+    });
+</script>
+
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

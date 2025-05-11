@@ -11,7 +11,7 @@ namespace assignment.Controllers
         
         private static HttpClient httpClient = new()
         {
-            BaseAddress = new Uri("http://localhost:5299/"),
+            BaseAddress = new Uri("http://localhost:5263/api/"),
         };
 
         [HttpGet]
@@ -31,7 +31,6 @@ namespace assignment.Controllers
                 var jsonResponse = await response.Content.ReadAsStringAsync();
                 AuthResponse? deserialisedResponse = JsonConvert.DeserializeObject<AuthResponse>(jsonResponse);
                 
-                HttpContext.Session.SetString("currentUser", deserialisedResponse.Token);
                 return View("Login");                
             } else
             {
@@ -50,7 +49,7 @@ namespace assignment.Controllers
         public async Task<IActionResult> Login(LoginModel login)
         {
             StringContent jsonContent = new(JsonConvert.SerializeObject(login), Encoding.UTF8,"application/json"); 
-            HttpResponseMessage response = await httpClient.PostAsync("api/Auth/Login", jsonContent);
+            HttpResponseMessage response = await httpClient.PostAsync("Auth/Login", jsonContent);
 
             if (response.IsSuccessStatusCode)
             {
@@ -58,11 +57,14 @@ namespace assignment.Controllers
                 AuthResponse? deserialisedResponse = JsonConvert.DeserializeObject<AuthResponse>(jsonResponse);
                 
                 HttpContext.Session.SetString("currentUser", deserialisedResponse.Token);
-                return View("Home");                
+                TempData["ToastrMessage"] = "Login successful!";
+                TempData["ToastrType"] = "success";
+                return RedirectToAction("Index","Home");                
             } else
             {
-                ViewBag.Result = "An error has occurred";
-                return View();
+                 TempData["ToastrMessage"] = "Login failed!";
+                 TempData["ToastrType"] = "error";
+                return View("Login");
             }            
         }
 

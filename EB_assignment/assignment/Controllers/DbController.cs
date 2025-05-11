@@ -1,0 +1,71 @@
+using System.Text;
+using FirebaseAdmin.Auth;
+using assignment.Models;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using assignment.Models;
+
+namespace assignment.Controllers
+{
+    public class DbController : Controller
+    {
+        private static HttpClient httpClient = new()
+        {
+            BaseAddress = new Uri("http://localhost:5263/api/"),
+        };
+
+        [HttpGet]
+        public IActionResult AddProduct()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> UploadProduct(itemModel item, IFormFile image)
+        {
+            using (var form = new MultipartFormDataContent())
+            {
+                var jsonSettings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Include
+                };
+
+                var jsonString = JsonConvert.SerializeObject(item, jsonSettings);
+                var stringContent = new StringContent(jsonString, Encoding.UTF8);
+
+                //explanation
+                //when sending the json req, the null stuff is getting omitted
+                //null value handling is suppsoed to deal with it but for some reason its not, so we 
+                //now are converting it to a string, then to a plain text then to the req
+                form.Add(stringContent, "model");
+
+                if (image != null && image.Length > 0)
+                {
+                    var imageContent = new StreamContent(image.OpenReadStream());
+                    imageContent.Headers.ContentType = new MediaTypeHeaderValue(image.ContentType);
+                    form.Add(imageContent, "image", image.FileName);
+                }
+
+                var response = await httpClient.PostAsync("Db/UploadProduct", form);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+                    TempData["ToastrMessage"] = "Upload successful!";
+                    TempData["ToastrType"] = "success";
+                    return View("AddProduct");
+                }
+                else
+                {
+                    TempData["ToastrMessage"] = "Upload unsuccessful!";
+                    TempData["ToastrType"] = "error";
+                    return View("AddProduct");
+                }
+            }
+
+        }
+
+
+
+    }
+}
