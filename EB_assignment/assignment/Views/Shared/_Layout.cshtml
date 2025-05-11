@@ -37,17 +37,24 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Auth"
-                                        asp-action="Register">Register</a>
-                                </li>
+                              
                             }
                             else
                             {
                                   <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Db"
                                     asp-action="AddProduct">AddProduct</a>
-                            </li>
+                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Db"
+                                        asp-action="ListUsers">Display Users</a>
+                                </li>
+
+                                  <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Db"
+                                        asp-action="ListProducts">Display Products</a>
+                                </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Db" asp-action="UserProfile"  asp-route-userId="@Context.Session.GetString("currentUser")">

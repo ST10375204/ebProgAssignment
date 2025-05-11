@@ -1,0 +1,38 @@
+@model List<Dictionary<string, object>>
+
+@{
+    ViewData["Title"] = "User List";
+}
+<!--confrim delete prommpt-->
+<script>
+    function confirmDelete() {
+        return confirm("Are you sure you want to delete this user?");
+    }
+</script>
+
+
+<div class="container mt-5">
+    <h2>User List</h2>
+
+    <div class="row">
+        @foreach (var user in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm rounded">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">@user["firstName"] @user["lastName"]</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>User ID:</strong> @user["userId"]</p>
+                        <p><strong>Role:</strong> @user["userRole"]</p>
+                        <form method="Post" asp-action="DeleteUser" onsubmit="return confirmDelete();">
+                            <input type="hidden" name="userId" value="@user["userId"]" />
+                            <button type="submit" class="btn btn-danger">Delete User</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -155,7 +155,12 @@ namespace assignmentAPI.Controllers
         {
             var productsRef = db.Collection("Products");
             var snapshot = await productsRef.GetSnapshotAsync();
-            var products = snapshot.Documents.Select(doc => doc.ToDictionary());
+            var products = snapshot.Documents.Select(doc =>
+             {
+                 var dict = doc.ToDictionary();
+                 dict["itemId"] = doc.Id;  //send the front end the items Id
+                 return dict;
+             }).ToList();
             return Ok(products);
         }
 
@@ -164,10 +169,14 @@ namespace assignmentAPI.Controllers
         {
             var usersRef = db.Collection("Users");
             var snapshot = await usersRef.GetSnapshotAsync();
-            var users = snapshot.Documents.Select(doc => doc.ToDictionary());
+            var users = snapshot.Documents.Select(doc =>
+             {
+                 var dict = doc.ToDictionary();
+                 dict["userId"] = doc.Id;  // send the front end the users Id
+                 return dict;
+             }).ToList();
 
             return Ok(users);
-
         }
 
         [HttpGet("GetProductsByUser")]
