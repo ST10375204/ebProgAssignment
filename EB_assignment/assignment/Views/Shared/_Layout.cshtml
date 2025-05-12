@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Assignment</title>
 
-    <!--Bootstrap CSS-->
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-    <!--Toastr CSS via CDN-->
+    <!-- Toastr CSS via CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" />
-    <!--  Font Awesome for image-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -26,47 +26,48 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                    </ul>
+                    <ul class="navbar-nav flex-grow-1"></ul>
+
                     <ul class="navbar-nav">
                         @{
-                          
-
                             if (Context.Session.GetString("currentUser") == null)
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
                                 </li>
-                              
                             }
                             else
                             {
-                                  <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Db"
-                                    asp-action="AddProduct">AddProduct</a>
-                                 </li>
-
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Db"
-                                        asp-action="ListUsers">Display Users</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Db" asp-action="ListProducts">Display Products</a>
                                 </li>
 
-                                  <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Db"
-                                        asp-action="ListProducts">Display Products</a>
-                                </li>
+                                if (Context.Session.GetString("userRole") == "Farmer")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Db" asp-action="AddProduct">Add Product</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Db" asp-action="ListUsers">Display Users</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Register">Add User</a>
+                                    </li>
+                                }
 
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Db" asp-action="UserProfile"  asp-route-userId="@Context.Session.GetString("currentUser")">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Db" asp-action="UserProfile"
+                                        asp-route-userId="@Context.Session.GetString("currentUser")">
                                         <i class="fas fa-user"></i> Profile
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Auth"
-                                        asp-action="Logout">Logout</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Logout">Logout</a>
                                 </li>
-
                             }
                         }
                     </ul>
@@ -81,16 +82,16 @@
         </main>
     </div>
 
-    <!--jQuery-->
+    <!-- jQuery -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
-    <!--Bootstrap Bundle-->
+    <!-- Bootstrap Bundle -->
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 
-    <!--notif trigger for toastrs so that they can be displayed app wide w/o remaking in other htmls -->
+    <!-- Global Toastr Notification Trigger -->
     <script>
         $(document).ready(function () {
             const message = '@TempData["ToastrMessage"]';
@@ -119,7 +120,6 @@
             }
         });
     </script>
-
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

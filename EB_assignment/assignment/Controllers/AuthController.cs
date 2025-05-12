@@ -60,6 +60,8 @@ namespace assignment.Controllers
                 AuthResponse? deserialisedResponse = JsonConvert.DeserializeObject<AuthResponse>(jsonResponse);
                 
                 HttpContext.Session.SetString("currentUser", deserialisedResponse.Token);
+                HttpContext.Session.SetString("userRole", await (await new HttpClient().GetAsync($"http://localhost:5263/api/Db/GetUserRole?userId={HttpContext.Session.GetString("currentUser")}&token={deserialisedResponse.Token}")).Content.ReadAsStringAsync());
+
                 TempData["ToastrMessage"] = "Login successful!";
                 TempData["ToastrType"] = "success";
                 return RedirectToAction("Index","Home");                
@@ -75,6 +77,7 @@ namespace assignment.Controllers
         public IActionResult LogOut()
         {
             HttpContext.Session.Remove("currentUser");
+            HttpContext.Session.Remove("userRole");
             return RedirectToAction("Login");
         }
         

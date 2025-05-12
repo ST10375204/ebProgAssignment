@@ -85,6 +85,7 @@ namespace assignment.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateUserProfile(RegisterModel model)
         {
+            
             var response = await httpClient.PostAsync(
                 $"UpdateUser?userId={HttpContext.Session.GetString("currentUser")}&lastName={model.lastName}&firstName={model.firstName}", null);
 
@@ -158,9 +159,15 @@ namespace assignment.Controllers
             return RedirectToAction("ListUsers", "Db");
         }
 
-        [HttpPost("DeleteProduct")]
+        [HttpPost]
         public async Task<IActionResult> DeleteProduct(string itemId)
         {
+
+            if (itemId == null){
+                TempData["ToastrMessage"] = "Product ID is null.";
+                TempData["ToastrType"] = "error";
+                return RedirectToAction("ListProducts", "Db");
+            }
              var response = await httpClient.DeleteAsync($"DeleteProduct?itemId={itemId}");
 
             if (response.IsSuccessStatusCode)
@@ -173,8 +180,8 @@ namespace assignment.Controllers
                 TempData["ToastrMessage"] = "Failed to delete Product.";
                 TempData["ToastrType"] = "error";
             }
+        return RedirectToAction("ListProducts");
 
-            return RedirectToAction("ListProducts", "Db");
             
         }
 

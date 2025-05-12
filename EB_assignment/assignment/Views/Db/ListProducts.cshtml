@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Product List";
     var serializedProducts = System.Text.Json.JsonSerializer.Serialize(Model);
+    var userRole = @Context.Session.GetString("userRole") ?? "";
+    var userId = @Context.Session.GetString("currentUser") ?? "";
 }
 
 <!-- Confirmation prompt script for delete -->
@@ -21,35 +23,7 @@
     <h2>Product List</h2>
 
     <div id="product-list" class="row">
-        @foreach (var product in Model)
-        {
-            <div class="col-md-4 mb-4 product-card">
-                <div class="card shadow-sm rounded">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="card-title mb-0">@product["itemName"]</h5>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Product ID:</strong> @product["itemId"]</p>
-                        <p><strong>Product Category:</strong> @product["itemCategory"]</p>
-                        <p><strong>Price:</strong> @product["itemPrice"]</p>
-                        <p><strong>Description:</strong> @product["itemDesc"]</p>
-                        <p><strong>Production Date:</strong> @product["productionDate"]</p>
-                        <p><strong>Submitted By:</strong> @product["userID"]</p>
-
-                        @if (product.ContainsKey("imgUrl") && !string.IsNullOrEmpty(product["imgUrl"].ToString()))
-                        {
-                            <img src="@product["imgUrl"]" class="img-fluid mb-3 product-image" alt="Product Image" />
-                        }
-
-                        <!-- Delete -->
-                        <form method="post" asp-action="DeleteProduct" onsubmit="return confirmDelete();">
-                            <input type="hidden" name="itemId" value="@product["itemId"]" />
-                            <button type="submit" class="btn btn-danger">Delete Product</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        }
+        <!-- JS will dynamically insert product cards here -->
     </div>
 </div>
 
@@ -65,10 +39,11 @@
 
 @section Scripts {
     <script>
-        // Get products from Razor-serialized list
+        // Product data from Razor
         let products = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model));
+        const userRole = "@userRole";
+        const userId = "@userId";
 
-        // Apply filter to product list
         function applyFilter(field, operation, value) {
             console.log(`Applying filter: ${field} ${operation} ${value}`);
 
@@ -114,9 +89,11 @@
 
             list.forEach(product => {
                 const card = document.createElement("div");
+                console.log("Item ID: ", product.itemId); 
                 card.className = "col-md-4 mb-4 product-card";
 
-                card.innerHTML = `
+                //building the product card HTML
+                let cardHtml = `
                         <div class="card shadow-sm rounded">
                             <div class="card-header bg-primary text-white">
                                 <h5 class="card-title mb-0">${product.itemName}</h5>
@@ -129,16 +106,57 @@
                                 <p><strong>Production Date:</strong> ${product.productionDate}</p>
                                 <p><strong>Submitted By:</strong> ${product.userID}</p>
                                 ${product.imgUrl ? `<img src="${product.imgUrl}" class="img-fluid mb-3 product-image" alt="Product Image" />` : ""}
-                                <form method="post" action="/YourController/DeleteProduct" onsubmit="return confirmDelete();">
-                                    <input type="hidden" name="itemId" value="${product.itemId}" />
-                                    <button type="submit" class="btn btn-danger">Delete Product</button>
-                                </form>
-                            </div>
-                        </div>
-                    `;
+                        `;
 
+
+
+                cardHtml += `</div>`; // Close card-body
+
+                // Insert card into the container
+                card.innerHTML = cardHtml;
                 container.appendChild(card);
+                renderButtons(card, product);
+
             });
+        }
+
+        
+        function renderButtons(card, product) {
+            let buttonsHtml = "";
+              
+            
+            if (userRole === "Farmer" && product.userID === userId) {
+                console.log("User Role: " + userRole);
+                console.log("Product UserID: " + product.userID);
+                console.log("Current User ID: " + userId);
+
+                buttonsHtml = `
+                        <form method="Post" action="DeleteProduct">
+                        
+                            <input type="hidden" name="itemId" value="${product.itemId}" onsubmit="return confirmDelete();"/>
+                            <button type="submit" class="btn btn-danger">Delete Product</button>
+                        </form>
+                        <form method="Post" action="UpdateProduct">
+                            <input type="hidden" name="itemId" value="${product.itemId}" />
+                            <button type="submit" class="btn btn-warning">Update Product</button>
+                        </form>
+                    `;
+            } else if (userRole === "Employee") {
+                buttonsHtml = `
+                        <form method="Post" action="DeleteProduct" >
+                        
+                            <input type="hidden" name="itemId" value="${product.itemId}" onsubmit="return confirmDelete();"/>
+                            <button type="submit" class="btn btn-danger">Delete Product</button>
+                        </form>
+                    `;
+            }
+
+            // Insert the buttons inside the product card
+            const cardBody = card.querySelector(".card-body");
+            const buttonsDiv = document.createElement("div");
+            buttonsDiv.className = "product-buttons";
+            buttonsDiv.innerHTML = buttonsHtml;
+            cardBody.appendChild(buttonsDiv);
         }
 
         function resetProducts() {
@@ -151,8 +169,6 @@
                 const response = event.detail.response;
                 const params = response.queryResult.parameters;
 
-                console.log("Dialogflow Params:", params);
-
                 if (params && params.field && params.operation && params.any !== undefined) {
                     let filterValue = params.any;
                     if (filterValue === "free" || filterValue === "zero" || filterValue === "null") {
@@ -164,7 +180,6 @@
                     console.log("No valid filter parameters found");
                 }
             });
-
 
         document.addEventListener("DOMContentLoaded", resetProducts);
     </script>

@@ -257,8 +257,23 @@ namespace assignmentAPI.Controllers
             return Ok();
         }
 
+        [HttpGet("GetUserRole")]
+        public async Task<IActionResult> GetUserRole(string userId)
+        {
+            var docRef = db.Collection("Users").Document(userId);
+            var snapshot = await docRef.GetSnapshotAsync();
 
-
+            if (snapshot.Exists)
+            {
+                var userRef = snapshot.ToDictionary();
+                string userRole = userRef["userRole"].ToString();
+                return Ok(userRole);
+            }
+            else
+            {
+                return NotFound($"User with ID {userId} not found.");
+            }
+        }
     }
 }
 
