@@ -2,7 +2,9 @@
 
 @{
     ViewData["Title"] = "Product List";
+    var serializedProducts = System.Text.Json.JsonSerializer.Serialize(Model);
 }
+
 <!-- Confirmation prompt script for delete -->
 <script>
     function confirmDelete() {
@@ -10,13 +12,18 @@
     }
 </script>
 
+<!-- Dialogflow Messenger -->
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger intent="WELCOME" chat-title="Product Assistant" agent-id="62fa9f33-7986-45f0-8ddd-020d6c563af1"
+    language-code="en"></df-messenger>
+
 <div class="container mt-5">
     <h2>Product List</h2>
 
-    <div class="row">
+    <div id="product-list" class="row">
         @foreach (var product in Model)
         {
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4 product-card">
                 <div class="card shadow-sm rounded">
                     <div class="card-header bg-primary text-white">
                         <h5 class="card-title mb-0">@product["itemName"]</h5>
@@ -34,7 +41,7 @@
                             <img src="@product["imgUrl"]" class="img-fluid mb-3 product-image" alt="Product Image" />
                         }
 
-                        <!-- Delete Form -->
+                        <!-- Delete -->
                         <form method="post" asp-action="DeleteProduct" onsubmit="return confirmDelete();">
                             <input type="hidden" name="itemId" value="@product["itemId"]" />
                             <button type="submit" class="btn btn-danger">Delete Product</button>
@@ -47,12 +54,123 @@
 </div>
 
 <style>
-    
     .product-image {
         width: 100%;
-        max-width: 300px; 
-        max-height: 200px; 
-        object-fit: contain; 
-        margin: 0 auto; 
+        max-width: 300px;
+        max-height: 200px;
+        object-fit: contain;
+        margin: 0 auto;
     }
 </style>
+
+@section Scripts {
+    <script>
+        // Get products from Razor-serialized list
+        let products = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model));
+
+        // Apply filter to product list
+        function applyFilter(field, operation, value) {
+            console.log(`Applying filter: ${field} ${operation} ${value}`);
+
+            const parsedValue = parseFloat(value);
+            const isValueNumeric = !isNaN(parsedValue);
+
+            const filteredProducts = products.filter(product => {
+                let productValue = product[field];
+                if (productValue === undefined) return false;
+
+                const parsedProductValue = parseFloat(productValue);
+                const isProductValueNumeric = !isNaN(parsedProductValue);
+
+                switch (operation.toLowerCase()) {
+                    case "equals":
+                        return productValue.toString().toLowerCase() === value.toString().toLowerCase();
+                    case "less than":
+                        if (isProductValueNumeric && isValueNumeric) {
+                            return parsedProductValue < parsedValue;
+                        }
+                        return false;
+                    case "greater than":
+                        if (isProductValueNumeric && isValueNumeric) {
+                            return parsedProductValue > parsedValue;
+                        }
+                        return false;
+                    default:
+                        return false;
+                }
+            });
+
+            renderProducts(filteredProducts);
+        }
+
+        function renderProducts(list) {
+            const container = document.getElementById("product-list");
+            container.innerHTML = "";
+
+            if (list.length === 0) {
+                container.innerHTML = "<p>No products found for this filter.</p>";
+                return;
+            }
+
+            list.forEach(product => {
+                const card = document.createElement("div");
+                card.className = "col-md-4 mb-4 product-card";
+
+                card.innerHTML = `
+                        <div class="card shadow-sm rounded">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="card-title mb-0">${product.itemName}</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Product ID:</strong> ${product.itemId}</p>
+                                <p><strong>Product Category:</strong> ${product.itemCategory}</p>
+                                <p><strong>Price:</strong> ${product.itemPrice}</p>
+                                <p><strong>Description:</strong> ${product.itemDesc}</p>
+                                <p><strong>Production Date:</strong> ${product.productionDate}</p>
+                                <p><strong>Submitted By:</strong> ${product.userID}</p>
+                                ${product.imgUrl ? `<img src="${product.imgUrl}" class="img-fluid mb-3 product-image" alt="Product Image" />` : ""}
+                                <form method="post" action="/YourController/DeleteProduct" onsubmit="return confirmDelete();">
+                                    <input type="hidden" name="itemId" value="${product.itemId}" />
+                                    <button type="submit" class="btn btn-danger">Delete Product</button>
+                                </form>
+                            </div>
+                        </div>
+                    `;
+
+                container.appendChild(card);
+            });
+        }
+
+        function resetProducts() {
+            renderProducts(products);
+        }
+
+        document.querySelector("df-messenger")
+            .addEventListener("df-response-received", function (event) {
+                console.log("Dialogflow response event received:", event.detail);
+                const response = event.detail.response;
+                const params = response.queryResult.parameters;
+
+                console.log("Dialogflow Params:", params);
+
+                if (params && params.field && params.operation && params.any !== undefined) {
+                    let filterValue = params.any;
+                    if (filterValue === "free" || filterValue === "zero" || filterValue === "null") {
+                        filterValue = (filterValue === "free" || filterValue === "zero") ? 0 : null;
+                    }
+                    console.log(`Applying filter: ${params.field} ${params.operation} ${filterValue}`);
+                    applyFilter(params.field, params.operation, filterValue);
+                } else {
+                    console.log("No valid filter parameters found");
+                }
+            });
+
+
+        document.addEventListener("DOMContentLoaded", resetProducts);
+    </script>
+}
+
+<!-- Reset Button -->
+<div class="container mb-4">
+    <button class="btn btn-secondary" onclick="resetProducts()">Reset Filters</button>
+</div>
