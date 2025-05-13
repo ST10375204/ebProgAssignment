@@ -89,6 +89,58 @@ namespace assignmentAPI.Controllers
             return Ok(products);
         }
 
+
+
+        [HttpPost("UpdateProduct")]
+        public async Task<IActionResult> UpdateProduct([FromBody] itemModel itemToUpdate)
+        {
+            var item = await _context.Items.FindAsync(itemToUpdate.itemId);
+            if (item == null) return NotFound($"Product {itemToUpdate.itemId} not found.");
+            
+            item.ItemCategory = itemToUpdate.itemCategory;
+            item.ItemDesc = itemToUpdate.itemDesc;
+            item.ItemPrice = itemToUpdate.itemPrice ?? item.ItemPrice;
+            item.ProductionDate = itemToUpdate.productionDate;
+
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+
+        [HttpGet("GetProductForUpdate")]
+        public async Task<IActionResult> GetProductForUpdate(int itemId)
+        {
+            var entity = await _context.Items.FindAsync(itemId);
+            if (entity == null) return NotFound();
+
+            var vm = new itemModel
+            {
+                itemId = entity.ItemId,
+                itemName = entity.ItemName,
+                itemCategory = entity.ItemCategory,
+                itemDesc = entity.ItemDesc,
+                itemPrice = entity.ItemPrice,
+                productionDate = entity.ProductionDate,
+                imgUrl = entity.ImgUrl,
+                userID = entity.UserId
+            };
+            return Ok(vm);
+        }
+
+        [HttpDelete("DeleteProduct")]
+        public async Task<IActionResult> DeleteProduct(int itemId)
+        {
+            var item = await _context.Items.FindAsync(itemId);
+            if (item == null)
+                return NotFound($"Product with ID {itemId} not found.");
+
+            _context.Items.Remove(item);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        // Users
+
         [HttpGet("GetUserDetails")]
         public async Task<IActionResult> GetUserDetails(string userId)
         {
@@ -108,42 +160,6 @@ namespace assignmentAPI.Controllers
 
             return Ok(user);
         }
-
-        [HttpPost("UpdateProduct")]
-        public async Task<IActionResult> UpdateProduct(int itemId,
-                                                       string category,
-                                                       string productionDate,
-                                                       string name,
-                                                       string desc,
-                                                       double price)
-        {
-            var item = await _context.Items.FindAsync(itemId);
-            if (item == null)
-                return NotFound($"Product with ID {itemId} not found.");
-
-            item.ItemCategory = category;
-            item.ProductionDate = productionDate;
-            item.ItemName = name;
-            item.ItemDesc = desc;
-            item.ItemPrice = price;
-
-            await _context.SaveChangesAsync();
-            return Ok();
-        }
-
-        [HttpDelete("DeleteProduct")]
-        public async Task<IActionResult> DeleteProduct(int itemId)
-        {
-            var item = await _context.Items.FindAsync(itemId);
-            if (item == null)
-                return NotFound($"Product with ID {itemId} not found.");
-
-            _context.Items.Remove(item);
-            await _context.SaveChangesAsync();
-            return Ok();
-        }
-
-        // Users
 
         [HttpGet("GetAllUsers")]
         public async Task<IActionResult> GetAllUsers()
@@ -215,10 +231,10 @@ namespace assignmentAPI.Controllers
             return Ok(new { imageUrl = imgUrl });
         }
 
-       public async Task<string> SaveImage(IFormFile image)
+        public async Task<string> SaveImage(IFormFile image)
         {
             if (image == null || image.Length == 0)
-                return string.Empty; // gracefully exit
+                return string.Empty;
 
             string imgUrl = string.Empty;
 

@@ -5,7 +5,7 @@ namespace assignmentAPI.Models
     public class itemModel
     {
     
-
+        public int itemId { get; set; }
         [Required]
         public string itemName { get; set; }
 

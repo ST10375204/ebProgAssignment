@@ -5,7 +5,7 @@ namespace assignment.Models
     public class itemModel
     {
 
-
+        public string itemId { get; set; }
         [Required(ErrorMessage = "Item name is required.")]
         public string itemName { get; set; }
 

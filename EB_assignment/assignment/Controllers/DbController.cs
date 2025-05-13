@@ -85,7 +85,7 @@ namespace assignment.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateUserProfile(RegisterModel model)
         {
-            
+
             var response = await httpClient.PostAsync(
                 $"UpdateUser?userId={HttpContext.Session.GetString("currentUser")}&lastName={model.lastName}&firstName={model.firstName}", null);
 
@@ -121,7 +121,7 @@ namespace assignment.Controllers
             TempData["ToastrType"] = "error";
             return View(new List<Dictionary<string, object>>());
         }
-         public async Task<IActionResult> ListProducts()
+        public async Task<IActionResult> ListProducts()
         {
             var response = await httpClient.GetAsync("GetAllProducts");
 
@@ -163,12 +163,13 @@ namespace assignment.Controllers
         public async Task<IActionResult> DeleteProduct(string itemId)
         {
 
-            if (itemId == null){
+            if (itemId == null)
+            {
                 TempData["ToastrMessage"] = "Product ID is null.";
                 TempData["ToastrType"] = "error";
                 return RedirectToAction("ListProducts", "Db");
             }
-             var response = await httpClient.DeleteAsync($"DeleteProduct?itemId={itemId}");
+            var response = await httpClient.DeleteAsync($"DeleteProduct?itemId={itemId}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -180,12 +181,57 @@ namespace assignment.Controllers
                 TempData["ToastrMessage"] = "Failed to delete Product.";
                 TempData["ToastrType"] = "error";
             }
-        return RedirectToAction("ListProducts");
+            return RedirectToAction("ListProducts");
 
-            
+
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> UpdateProduct(int itemId)
+        {
+
+            var response = await httpClient.GetAsync($"GetProductForUpdate?itemId={itemId}");
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ToastrMessage"] = "Failed to load product.";
+                TempData["ToastrType"] = "error";
+                return RedirectToAction("ListProducts");
+            }
+
+
+            var json = await response.Content.ReadAsStringAsync();
+            var itemModel = JsonConvert.DeserializeObject<itemModel>(json);
+            return View(itemModel);
         }
 
 
+        [HttpPost]
+        public async Task<IActionResult> UpdateProduct(itemModel item)
+        {
+            var jsonSettings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Include
+            };
+
+            var jsonString = JsonConvert.SerializeObject(item, jsonSettings);
+            var stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync($"UpdateProduct", stringContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["ToastrMessage"] = "Product updated successfully!";
+                TempData["ToastrType"] = "success";
+            }
+            else
+            {
+                    var body = await response.Content.ReadAsStringAsync();
+    TempData["ToastrMessage"] = 
+        $"Update failed ({(int)response.StatusCode}): {body}";
+    TempData["ToastrType"] = "error";
+            }
+
+            return RedirectToAction("UpdateProduct", new { itemId = item.itemId });
+        }
 
 
     }
