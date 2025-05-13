@@ -32,7 +32,7 @@ namespace assignment.Controllers
                 AuthResponse? deserialisedResponse = JsonConvert.DeserializeObject<AuthResponse>(jsonResponse);
                  TempData["ToastrMessage"] = "Registration successful!";
                 TempData["ToastrType"] = "success";
-                return View("Login");                
+                return View();                
             } else
             {
                 TempData["ToastrMessage"] = "Registration failed!";

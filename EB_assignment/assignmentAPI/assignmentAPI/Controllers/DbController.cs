@@ -1,15 +1,14 @@
-using Firebase.Auth;
 using assignmentAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using assignmentAPI.Utils;
-using Google.Cloud.Firestore;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-using Google.Type;
 
 namespace assignmentAPI.Controllers
 {
@@ -17,58 +16,206 @@ namespace assignmentAPI.Controllers
     [ApiController]
     public class DbController : Controller
     {
-        FirestoreDb db;
-        string credentials;
+        private readonly AssignmentDbContext _context;
 
-        public DbController()
+        public DbController(AssignmentDbContext context)
         {
-
-            credentials = Environment.GetEnvironmentVariable("google_appli_creds");
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", credentials);
-            db = FirestoreDb.Create(Environment.GetEnvironmentVariable("firestoreID"));
+            _context = context;
         }
-
-
+        //  Products
 
         [HttpPost("UploadProduct")]
         public async Task<IActionResult> UploadProduct([FromForm] string model, IFormFile? image)
         {
-            var item = JsonConvert.DeserializeObject<itemModel>(model);
-
+            var dto = JsonConvert.DeserializeObject<itemModel>(model)!;
             var imgUrl = await SaveImage(image);
-            item.imgUrl = imgUrl ?? "";
+            dto.imgUrl = imgUrl ?? "";
 
-            Dictionary<string, object> itemData = new Dictionary<string, object>
-    {
-        { "itemName", item.itemName },
-        { "itemCategory", item.itemCategory },
-        { "itemDesc", item.itemDesc ?? "" },
-        { "itemPrice", item.itemPrice ?? 0.0 },
-        { "productionDate", item.productionDate ?? "" },
-        { "imgUrl", item.imgUrl ?? "" },
-        { "userID", item.userID ?? "" }//done for testing purposes
-    };
+            var entity = new Item
+            {
+                ItemName = dto.itemName,
+                ItemCategory = dto.itemCategory,
+                ItemDesc = dto.itemDesc,
+                ItemPrice = dto.itemPrice,
+                ProductionDate = dto.productionDate,
+                ImgUrl = dto.imgUrl,
+                UserId = dto.userID
+            };
 
-            CollectionReference colRef = db.Collection("Products");
-            DocumentReference docRef = await colRef.AddAsync(itemData);
+            _context.Items.Add(entity);
+            await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Product uploaded successfully", productId = docRef.Id });
+            return Ok(new { message = "Product uploaded successfully", productId = entity.ItemId });
         }
 
+        [HttpGet("GetAllProducts")]
+        public async Task<IActionResult> GetAllProducts()
+        {
+            var products = await _context.Items
+                .Select(i => new
+                {
+                    itemId = i.ItemId,
+                    itemName = i.ItemName,
+                    itemCategory = i.ItemCategory,
+                    itemDesc = i.ItemDesc,
+                    itemPrice = i.ItemPrice,
+                    productionDate = i.ProductionDate,
+                    imgUrl = i.ImgUrl,
+                    userID = i.UserId
+                })
+                .ToListAsync();
 
+            return Ok(products);
+        }
 
-        [HttpPost("TestImageUpload")] //test for the helper is dummy
+        [HttpGet("GetProductsByUser")]
+        public async Task<IActionResult> GetProductsByUser(string userId)
+        {
+            var products = await _context.Items
+                .Where(i => i.UserId == userId)
+                .Select(i => new
+                {
+                    itemId = i.ItemId,
+                    itemName = i.ItemName,
+                    itemCategory = i.ItemCategory,
+                    itemDesc = i.ItemDesc,
+                    itemPrice = i.ItemPrice,
+                    productionDate = i.ProductionDate,
+                    imgUrl = i.ImgUrl,
+                    userID = i.UserId
+                })
+                .ToListAsync();
+
+            return Ok(products);
+        }
+
+        [HttpGet("GetUserDetails")]
+        public async Task<IActionResult> GetUserDetails(string userId)
+        {
+            var user = await _context.Users
+                .Where(u => u.UserId == userId)
+                .Select(u => new
+                {
+                    userId = u.UserId,
+                    firstName = u.FirstName,
+                    lastName = u.LastName,
+                    userRole = u.UserRole
+                })
+                .FirstOrDefaultAsync();
+
+            if (user == null)
+                return NotFound($"User with ID {userId} not found.");
+
+            return Ok(user);
+        }
+
+        [HttpPost("UpdateProduct")]
+        public async Task<IActionResult> UpdateProduct(int itemId,
+                                                       string category,
+                                                       string productionDate,
+                                                       string name,
+                                                       string desc,
+                                                       double price)
+        {
+            var item = await _context.Items.FindAsync(itemId);
+            if (item == null)
+                return NotFound($"Product with ID {itemId} not found.");
+
+            item.ItemCategory = category;
+            item.ProductionDate = productionDate;
+            item.ItemName = name;
+            item.ItemDesc = desc;
+            item.ItemPrice = price;
+
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpDelete("DeleteProduct")]
+        public async Task<IActionResult> DeleteProduct(int itemId)
+        {
+            var item = await _context.Items.FindAsync(itemId);
+            if (item == null)
+                return NotFound($"Product with ID {itemId} not found.");
+
+            _context.Items.Remove(item);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        // Users
+
+        [HttpGet("GetAllUsers")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _context.Users
+                .Select(u => new
+                {
+                    userId = u.UserId,
+                    firstName = u.FirstName,
+                    lastName = u.LastName,
+                    userRole = u.UserRole
+                })
+                .ToListAsync();
+
+            return Ok(users);
+        }
+
+        [HttpPost("UpdateUser")]
+        public async Task<IActionResult> UpdateUser(string userId, string lastName, string firstName)
+        {
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null)
+                return NotFound($"User with ID {userId} not found.");
+
+            user.LastName = lastName;
+            user.FirstName = firstName;
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpDelete("DeleteUser")]
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null)
+                return NotFound($"User with ID {userId} not found.");
+
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpGet("GetUserRole")]
+        public async Task<IActionResult> GetUserRole(string userId)
+        {
+            if (string.IsNullOrEmpty(userId))
+                return BadRequest("UserId cannot be null or empty.");
+
+            var role = await _context.Users
+                .Where(u => u.UserId == userId)
+                .Select(u => u.UserRole)
+                .FirstOrDefaultAsync();
+
+            if (role == null)
+                return NotFound($"User with ID {userId} not found.");
+
+            return Ok(role);
+        }
+
+        //image helpers
+
+        [HttpPost("TestImageUpload")]
+        [Consumes("multipart/form-data")]
         public async Task<IActionResult> TestImageUpload(IFormFile image)
         {
             var imgUrl = await SaveImage(image);
-
             if (string.IsNullOrEmpty(imgUrl))
                 return StatusCode(500, "Failed to upload image.");
-
             return Ok(new { imageUrl = imgUrl });
         }
 
-        public async Task<string> SaveImage(IFormFile image)
+       public async Task<string> SaveImage(IFormFile image)
         {
             if (image == null || image.Length == 0)
                 return string.Empty; // gracefully exit
@@ -135,147 +282,10 @@ namespace assignmentAPI.Controllers
             request.AddParameter("client_secret", Environment.GetEnvironmentVariable("imgurClientSecret"));
             request.AddParameter("grant_type", "refresh_token");
 
-            RestResponse response = await client.ExecuteAsync(request);
-
-            if (response.IsSuccessful)
-            {
-                var jsonResponse = JObject.Parse(response.Content);
-                Console.WriteLine("New Access Token: " + jsonResponse["access_token"]?.ToString());
-                return jsonResponse["access_token"]?.ToString();
-            }
-            else
-            {
-                Console.WriteLine("Error getting access token: " + response.Content);
-                return string.Empty;
-            }
+            var response = await client.ExecuteAsync(request);
+            if (!response.IsSuccessful) return string.Empty;
+            return JObject.Parse(response.Content!)["access_token"]!.ToString()!;
         }
 
-        [HttpGet("GetAllProducts")]
-        public async Task<IActionResult> GetAllProducts()
-        {
-            var productsRef = db.Collection("Products");
-            var snapshot = await productsRef.GetSnapshotAsync();
-            var products = snapshot.Documents.Select(doc =>
-             {
-                 var dict = doc.ToDictionary();
-                 dict["itemId"] = doc.Id;  //send the front end the items Id
-                 return dict;
-             }).ToList();
-            return Ok(products);
-        }
-
-        [HttpGet("GetAllUsers")]
-        public async Task<IActionResult> GetAllUsers()
-        {
-            var usersRef = db.Collection("Users");
-            var snapshot = await usersRef.GetSnapshotAsync();
-            var users = snapshot.Documents.Select(doc =>
-             {
-                 var dict = doc.ToDictionary();
-                 dict["userId"] = doc.Id;  // send the front end the users Id
-                 return dict;
-             }).ToList();
-
-            return Ok(users);
-        }
-
-        [HttpGet("GetProductsByUser")]
-        public async Task<IActionResult> GetProductsByUser(string userId)
-        {
-            var productsRef = db.Collection("Products");
-            var query = productsRef.WhereEqualTo("userID", userId);
-            var snapshot = await query.GetSnapshotAsync();
-            var products = snapshot.Documents.Select(doc => doc.ToDictionary());
-            return Ok(products);
-        }
-
-        [HttpGet("GetUserDetails")]
-        public async Task<IActionResult> GetUserDetails(string userId)
-        {
-            var docRef = db.Collection("Users").Document(userId);
-            var snapshot = await docRef.GetSnapshotAsync();
-
-            if (snapshot.Exists)
-            {
-                var userData = snapshot.ToDictionary();
-                userData.Add("userId", snapshot.Id);
-                return Ok(userData);
-
-                //wouldve liked to add email+pass but firebase does not allow to retrieve passes
-                //and email is linked to fbAuth not fbStore. big hassle to retrieve
-                //ofc theres a work around bah again, hassle
-            }
-            else
-            {
-                return NotFound($"User with ID {userId} not found.");
-            }
-        }
-
-        [HttpPost("UpdateUser")]
-        public async Task<IActionResult> UpdateUser(string userId, string lastName, string firstName)
-        {
-            DocumentReference userRef = db.Collection("Users").Document(userId);
-
-            await userRef.SetAsync(new Dictionary<string, object>
-            {
-                 { "firstName", firstName },
-                 {"lastName", lastName}
-            }, SetOptions.MergeAll); //merge all used due to it being safer> if by some fault
-            //a name/lastname isnt saved, it just adds it on
-            return Ok();
-        }
-
-        [HttpPost("UpdateProduct")]
-        public async Task<IActionResult> UpdateProduct(string itemId, string category, string productionDate, string name, string desc, double price)
-        {
-            DocumentReference itemRef = db.Collection("Products").Document(itemId);
-
-            await itemRef.SetAsync(new Dictionary<string, object>
-            {
-                 { "itemName", name },
-                 {"itemDesc", desc},
-                 {"itemCategory", category},
-                 {"productionDate", productionDate},
-                 {"itemPrice", price}
-            }, SetOptions.MergeAll);
-            return Ok();
-        }
-
-        [HttpDelete("DeleteUser")]
-        public async Task<IActionResult> DeleteUser(string userId)
-        {
-            DocumentReference userRef = db.Collection("Users").Document(userId);
-            await userRef.DeleteAsync();
-            return Ok();
-        }
-
-        [HttpDelete("DeleteProduct")]
-        public async Task<IActionResult> DeleteProduct(string itemId)
-        {
-            DocumentReference itemRef = db.Collection("Products").Document(itemId);
-            await itemRef.DeleteAsync();
-            return Ok();
-        }
-
-        [HttpGet("GetUserRole")]
-        public async Task<IActionResult> GetUserRole(string userId)
-        {
-            var docRef = db.Collection("Users").Document(userId);
-            var snapshot = await docRef.GetSnapshotAsync();
-
-            if (snapshot.Exists)
-            {
-                var userRef = snapshot.ToDictionary();
-                string userRole = userRef["userRole"].ToString();
-                return Ok(userRole);
-            }
-            else
-            {
-                return NotFound($"User with ID {userId} not found.");
-            }
-        }
     }
 }
-
-
-

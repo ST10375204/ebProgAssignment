@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using Google.Type;
 using assignmentAPI.Controllers;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace assignmentAPI.Controllers
 {
@@ -20,58 +21,98 @@ namespace assignmentAPI.Controllers
     {
 
         FirebaseAuthProvider auth;
-        FirestoreDb db;
+        private readonly IConfiguration _config;
+      
         string credentials;
-        public AuthController()
+        private readonly AssignmentDbContext _context;
+        public AuthController(IConfiguration config, AssignmentDbContext context)
         {
+            _config = config;
+            _context = context;
+
+            // Env Vars check
+            Console.WriteLine("FirebaseMathApp: " + Environment.GetEnvironmentVariable("FirebaseMathApp"));
+            Console.WriteLine("google_appli_creds: " + Environment.GetEnvironmentVariable("google_appli_creds"));
+            Console.WriteLine("firestoreID: " + Environment.GetEnvironmentVariable("firestoreID"));
+
+            // Connection string check
+            Console.WriteLine("AssignmentDb Connection String: " + _config.GetConnectionString("AssignmentDb"));
+
             auth = new FirebaseAuthProvider(new FirebaseConfig(Environment.GetEnvironmentVariable("FirebaseMathApp")));
             credentials = Environment.GetEnvironmentVariable("google_appli_creds");
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", credentials);
-            db = FirestoreDb.Create(Environment.GetEnvironmentVariable("firestoreID"));
         }
+
 
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterModel regi)
         {
+
             try
             {
-                await auth.CreateUserWithEmailAndPasswordAsync(regi.email, regi.password);
-
-                var fbAuthLink = await auth.SignInWithEmailAndPasswordAsync(regi.email, regi.password);
-                string currentUserId = fbAuthLink.User.LocalId;
+                string currentUserId = await CreateFirebaseUserAndGetUid(regi.email, regi.password);
 
                 if (currentUserId != null)
                 {
-                    await SaveUserData(currentUserId, regi.firstName, regi.lastName, regi.userRole);
+                    await SaveUserData(currentUserId, regi);
 
                     return Ok(new AuthResponse(currentUserId));
                 }
-            }
-            catch (FirebaseAuthException ex)
-            {
-                var firebaseEx = JsonConvert.DeserializeObject<FirebaseErrorModel>(ex.ResponseData);
-                return Unauthorized(firebaseEx.error.code + " - " + firebaseEx.error.message);
             }
             catch (Exception ex)
             {
                 return Unauthorized(ex.Message);
             }
-            return View();
 
+            return View();
         }
 
-        private async Task SaveUserData(string uid, string firstName, string lastName, string userRole)
+        private async Task SaveUserData(string uid, RegisterModel regi)
         {
-            DocumentReference docRef = db.Collection("Users").Document(uid);
-            Dictionary<string, object> user = new Dictionary<string, object>
-    {
-        { "firstName", firstName },
-        { "lastName", lastName },
-        { "userRole", userRole }
-    };
-       await docRef.SetAsync(user);
-        
-    }
+            var newUser = new Models.User
+            {
+                UserId = uid,
+                FirstName = regi.firstName,
+                LastName = regi.lastName,
+                UserRole = regi.userRole
+            };
+
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
+        }
+
+
+        public async Task<string> CreateFirebaseUserAndGetUid(string email, string password)
+        {
+            var client = new RestClient("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + Environment.GetEnvironmentVariable("FirebaseMathApp"));
+
+            var request = new RestRequest("", Method.Post);
+            request.AddHeader("Content-Type", "application/json");
+
+            var body = new
+            {
+                email = email,
+                password = password,
+                returnSecureToken = true
+            };
+
+            request.AddJsonBody(body);
+
+            var response = await client.ExecuteAsync(request);
+
+            if (!response.IsSuccessful)
+            {
+                throw new Exception("Failed to create user: " + response.Content);
+            }
+
+            // Log the raw response content for debugging purposes
+            Console.WriteLine(response.Content);  // Or use your logging mechanism
+
+            dynamic result = JObject.Parse(response.Content);
+            string uid = result.localId;
+
+            return uid;
+        }
 
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginModel login)
@@ -101,7 +142,7 @@ namespace assignmentAPI.Controllers
 
             return View();
         }
-        
+
 
         [HttpPost("Logout")]
         public IActionResult LogOut()

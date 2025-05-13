@@ -145,7 +145,8 @@
                 buttonsHtml = `
                         <form method="Post" action="DeleteProduct" >
                         
-                            <input type="hidden" name="itemId" value="${product.itemId}" onsubmit="return confirmDelete();"/>
+                            <input type="hidden" name="itemId" value="${product.itemId}" 
+                            onsubmit="return confirmDelete();"/>
                             <button type="submit" class="btn btn-danger">Delete Product</button>
                         </form>
                     `;
