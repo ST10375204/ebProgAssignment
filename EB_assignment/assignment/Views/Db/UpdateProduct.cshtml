@@ -1,52 +1,68 @@
 @model assignment.Models.itemModel
+
 @{
     ViewData["Title"] = "Edit Product";
 }
 
-<h2>Edit Product</h2>
-
-<form asp-action="UpdateProduct" method="post">
-    @Html.AntiForgeryToken()
-
-    <input type="hidden" asp-for="itemId" />
-  <input type="hidden" asp-for="userID" />
-
-    <div class="form-group">
-        <label asp-for="itemName"></label>
-        <input asp-for="itemName" class="form-control" readonly />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="itemCategory"></label>
-        <input asp-for="itemCategory" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="itemDesc"></label>
-        <textarea asp-for="itemDesc" class="form-control"></textarea>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="itemPrice"></label>
-        <input asp-for="itemPrice" type="number" step="0.01" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="productionDate"></label>
-        <input asp-for="productionDate" class="form-control" />
-    </div>
-
-    @if (!string.IsNullOrEmpty(Model.imgUrl))
-    {
-        <div class="form-group">
-            <label>Current Image</label><br />
-            <img src="@Model.imgUrl" class="img-thumbnail" style="max-width:200px;" />
+<div class="container mt-5">
+    <div class="card shadow-sm rounded">
+        <div class="card-header bg-primary text-white">
+            <h4>Edit Product</h4>
         </div>
-    }
+        <div class="card-body">
+            <form asp-action="UpdateProduct" method="post">
+                @Html.AntiForgeryToken()
 
-    <button type="submit" class="btn btn-primary">Save Changes</button>
-    <a asp-action="listProducts" class="btn btn-secondary">Cancel</a>
-</form>
+                <input type="hidden" asp-for="itemId" />
+                <input type="hidden" asp-for="userID" />
+
+                <div class="form-group mb-3">
+                    <label asp-for="itemName">Product Name</label>
+                    <input asp-for="itemName" class="form-control" readonly />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="itemCategory">Category</label>
+                    <input asp-for="itemCategory" class="form-control" />
+                    <span asp-validation-for="itemCategory" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="itemDesc">Description</label>
+                    <textarea asp-for="itemDesc" class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="itemPrice">Price</label>
+                    <input asp-for="itemPrice" type="number" step="0.01" class="form-control" />
+                    <span asp-validation-for="itemPrice" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="productionDate">Production Date</label>
+                    <input asp-for="productionDate" type="date" class="form-control" />
+                    <span asp-validation-for="productionDate" class="text-danger"></span>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.imgUrl))
+                {
+                    <div class="form-group mb-3">
+                        <label>Current Image</label><br />
+                        <img src="@Model.imgUrl"
+                             class="img-fluid img-thumbnail"
+                             style="max-width: 200px;"
+                             alt="Product Image" />
+                    </div>
+                }
+
+                <div class="d-flex justify-content-end">
+                    <a asp-action="ListProducts" class="btn btn-secondary me-2">Cancel</a>
+                    <button type="submit" class="btn btn-success">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

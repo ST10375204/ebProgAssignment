@@ -15,6 +15,26 @@ namespace assignment.Controllers
             BaseAddress = new Uri("http://localhost:5263/api/Db/"),
         };
 
+        //products
+        public async Task<IActionResult> ListProducts()
+        {
+            var response = await httpClient.GetAsync("GetAllProducts");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                var users = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(jsonString);
+                TempData["ToastrMessage"] = "Fetched all products!";
+                TempData["ToastrType"] = "success";
+
+                return View(users);
+            }
+
+            TempData["ToastrMessage"] = "Unable to fetch products";
+            TempData["ToastrType"] = "error";
+            return View(new List<Dictionary<string, object>>());
+        }
+
         [HttpGet]
         public IActionResult AddProduct()
         {
@@ -63,100 +83,6 @@ namespace assignment.Controllers
                 }
             }
 
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> UserProfile(string userId)
-        {
-            var response = await httpClient.GetAsync($"GetUserDetails?userId={userId}");
-            if (response.IsSuccessStatusCode)
-            {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                var userData = JsonConvert.DeserializeObject<RegisterModel>(jsonString);
-                return View(userData);
-            }
-            else
-            {
-                TempData["ToastrMessage"] = "User not found.";
-                TempData["ToastrType"] = "error";
-                return RedirectToAction("Index");
-            }
-        }
-        [HttpPost]
-        public async Task<IActionResult> UpdateUserProfile(RegisterModel model)
-        {
-
-            var response = await httpClient.PostAsync(
-                $"UpdateUser?userId={HttpContext.Session.GetString("currentUser")}&lastName={model.lastName}&firstName={model.firstName}", null);
-
-            if (response.IsSuccessStatusCode)
-            {
-                TempData["ToastrMessage"] = "Updated profile!";
-                TempData["ToastrType"] = "success";
-                return RedirectToAction("UserProfile", new { userId = HttpContext.Session.GetString("currentUser") });
-            }
-            else
-            {
-                TempData["ToastrMessage"] = "Unable to update profile";
-                TempData["ToastrType"] = "error";
-                return RedirectToAction("Index");
-            }
-        }
-
-        public async Task<IActionResult> ListUsers()
-        {
-            var response = await httpClient.GetAsync("GetAllUsers");
-
-            if (response.IsSuccessStatusCode)
-            {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                var users = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(jsonString);
-                TempData["ToastrMessage"] = "Fetched all users!";
-                TempData["ToastrType"] = "success";
-
-                return View(users);
-            }
-
-            TempData["ToastrMessage"] = "Unable to fetch users";
-            TempData["ToastrType"] = "error";
-            return View(new List<Dictionary<string, object>>());
-        }
-        public async Task<IActionResult> ListProducts()
-        {
-            var response = await httpClient.GetAsync("GetAllProducts");
-
-            if (response.IsSuccessStatusCode)
-            {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                var users = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(jsonString);
-                TempData["ToastrMessage"] = "Fetched all products!";
-                TempData["ToastrType"] = "success";
-
-                return View(users);
-            }
-
-            TempData["ToastrMessage"] = "Unable to fetch products";
-            TempData["ToastrType"] = "error";
-            return View(new List<Dictionary<string, object>>());
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> DeleteUser(string userId)
-        {
-            var response = await httpClient.DeleteAsync($"DeleteUser?userId={userId}");
-
-            if (response.IsSuccessStatusCode)
-            {
-                TempData["ToastrMessage"] = "User deleted successfully!";
-                TempData["ToastrType"] = "success";
-            }
-            else
-            {
-                TempData["ToastrMessage"] = "Failed to delete user.";
-                TempData["ToastrType"] = "error";
-            }
-
-            return RedirectToAction("ListUsers", "Db");
         }
 
         [HttpPost]
@@ -224,13 +150,112 @@ namespace assignment.Controllers
             }
             else
             {
-                    var body = await response.Content.ReadAsStringAsync();
-    TempData["ToastrMessage"] = 
-        $"Update failed ({(int)response.StatusCode}): {body}";
-    TempData["ToastrType"] = "error";
+                var body = await response.Content.ReadAsStringAsync();
+                TempData["ToastrMessage"] = "Update failed";
+                TempData["ToastrType"] = "error";
             }
 
             return RedirectToAction("UpdateProduct", new { itemId = item.itemId });
+        }
+        [HttpGet]
+        public async Task<IActionResult> MyProducts()
+        {
+            var userId = HttpContext.Session.GetString("currentUser");
+            var response = await httpClient.GetAsync(
+                $"GetProductsByUser?userId={userId}"
+            );
+
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["ToastrMessage"] = "Products not found.";
+                TempData["ToastrType"] = "error";
+                return RedirectToAction("Index");
+            }
+
+            var jsonString = await response.Content.ReadAsStringAsync();
+            var products = JsonConvert.DeserializeObject<List<itemModel>>(jsonString)
+                            ?? new List<itemModel>();
+
+            return View(products); 
+        }
+
+        //users
+
+        public async Task<IActionResult> ListUsers()
+        {
+            var response = await httpClient.GetAsync("GetAllUsers");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                var users = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(jsonString);
+                TempData["ToastrMessage"] = "Fetched all users!";
+                TempData["ToastrType"] = "success";
+
+                return View(users);
+            }
+
+            TempData["ToastrMessage"] = "Unable to fetch users";
+            TempData["ToastrType"] = "error";
+            return View(new List<Dictionary<string, object>>());
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> UserProfile(string userId)
+        {
+            var response = await httpClient.GetAsync($"GetUserDetails?userId={userId}");
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                var userData = JsonConvert.DeserializeObject<RegisterModel>(jsonString);
+                return View(userData);
+            }
+            else
+            {
+                TempData["ToastrMessage"] = "User not found.";
+                TempData["ToastrType"] = "error";
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateUserProfile(RegisterModel model)
+        {
+
+            var response = await httpClient.PostAsync(
+                $"UpdateUser?userId={HttpContext.Session.GetString("currentUser")}&lastName={model.lastName}&firstName={model.firstName}", null);
+
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["ToastrMessage"] = "Updated profile!";
+                TempData["ToastrType"] = "success";
+                return RedirectToAction("UserProfile", new { userId = HttpContext.Session.GetString("currentUser") });
+            }
+            else
+            {
+                TempData["ToastrMessage"] = "Unable to update profile";
+                TempData["ToastrType"] = "error";
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            var response = await httpClient.DeleteAsync($"DeleteUser?userId={userId}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["ToastrMessage"] = "User deleted successfully!";
+                TempData["ToastrType"] = "success";
+            }
+            else
+            {
+                TempData["ToastrMessage"] = "Failed to delete user.";
+                TempData["ToastrType"] = "error";
+            }
+
+            return RedirectToAction("ListUsers", "Db");
         }
 
 

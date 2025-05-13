@@ -23,7 +23,7 @@
     <h2>Product List</h2>
 
     <div id="product-list" class="row">
-        <!-- JS will dynamically insert product cards here -->
+        
     </div>
 </div>
 
@@ -112,7 +112,7 @@
 
                 cardHtml += `</div>`; // Close card-body
 
-                // Insert card into the container
+                // card into the container
                 card.innerHTML = cardHtml;
                 container.appendChild(card);
                 renderButtons(card, product);
@@ -153,7 +153,7 @@
                         `;
             }
 
-            // Insert the buttons inside the product card
+            // buttons for product card
             const cardBody = card.querySelector(".card-body");
             const buttonsDiv = document.createElement("div");
             buttonsDiv.className = "product-buttons";

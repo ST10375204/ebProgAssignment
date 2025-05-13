@@ -90,7 +90,6 @@ namespace assignmentAPI.Controllers
         }
 
 
-
         [HttpPost("UpdateProduct")]
         public async Task<IActionResult> UpdateProduct([FromBody] itemModel itemToUpdate)
         {

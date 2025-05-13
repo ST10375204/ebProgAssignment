@@ -21,6 +21,10 @@ body {
   margin-bottom: 60px;
 }
 
+header {
+  background-color: #A1E82E;
+}
+
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
@@ -29,3 +33,55 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+.custom-header {
+  background-color: #A1E82E;
+}
+.navbar.custom-navbar {
+  background-color: #A1E82E !important;
+}
+.custom-footer {
+  background-color: #A1E82E;
+  border-top: 1px solid #000; /* Black outline at the top */
+  border-bottom: 3px solid #000; /* Black outline at the bottom */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  color: #333; /* Dark text color for visibility */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #A1E82E;
+  z-index: 10; /* Ensure the navbar is above other content */
+}
+
+main {
+  flex: 1;
+  margin-top: 56px; /* Ensure there's space for the navbar at the top */
+}
+
+.custom-footer {
+  background-color: #A1E82E;
+  border-top: 1px solid #000;
+  border-bottom: 3px solid #000;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  color: #333;
+  z-index: -1; /* Push footer behind content if needed */
+}
+
+

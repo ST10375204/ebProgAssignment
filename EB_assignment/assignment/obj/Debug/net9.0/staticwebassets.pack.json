@@ -2,7 +2,27 @@
   "Files": [
     {
       "Id": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\assignment.bundle.scp.css",
-      "PackagePath": "staticwebassets\\assignment.a9utwb6544.bundle.scp.css"
+      "PackagePath": "staticwebassets\\assignment.07nz7qhaz9.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\GREEN_ENERGY.jpg",
+      "PackagePath": "staticwebassets\\assets\\GREEN_ENERGY.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\farmers.png",
+      "PackagePath": "staticwebassets\\assets\\farmers.png"
+    },
+    {
+      "Id": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\plug.jpg",
+      "PackagePath": "staticwebassets\\assets\\plug.jpg"
+    },
+    {
+      "Id": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
       "Id": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\site.css",

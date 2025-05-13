@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sqn0O5dT/DJhG6uzn+F3rXikZRY+Pn6O1N0AE2E9DAQ=",
+  "Hash": "iAFwToanDG5SWOfTUt74t0joQxQoNM+fT3FCV1Uqt2c=",
   "Source": "assignment",
   "BasePath": "_content/assignment",
   "Mode": "Default",
@@ -794,12 +794,12 @@
       "OriginalItemSpec": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\m89whmsg16-b9sayid5wm.gz",
+      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\m89whmsg16-cfwtpis95k.gz",
       "SourceId": "assignment",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/assignment",
-      "RelativePath": "css/site#[.{fingerprint=b9sayid5wm}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=cfwtpis95k}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -808,8 +808,8 @@
       "RelatedAsset": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "0suozzrugb",
-      "Integrity": "0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=",
+      "Fingerprint": "hbm3n2trde",
+      "Integrity": "veJ/tbuxVRwXxlvOR1tX6aJAL/pGGVasppBYkhwTItU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\site.css"
@@ -941,12 +941,12 @@
       "OriginalItemSpec": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\ph4v3kg8er-a9utwb6544.gz",
+      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\ph4v3kg8er-07nz7qhaz9.gz",
       "SourceId": "assignment",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/assignment",
-      "RelativePath": "assignment#[.{fingerprint=a9utwb6544}]?.styles.css.gz",
+      "RelativePath": "assignment#[.{fingerprint=07nz7qhaz9}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -955,19 +955,19 @@
       "RelatedAsset": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\scopedcss\\bundle\\assignment.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "bh71y7jtwo",
-      "Integrity": "HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc=",
+      "Fingerprint": "q0pkwdcdfr",
+      "Integrity": "qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\scopedcss\\bundle\\assignment.styles.css"
     },
     {
-      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\pmm6z0m0uh-a9utwb6544.gz",
+      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\pmm6z0m0uh-07nz7qhaz9.gz",
       "SourceId": "assignment",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/assignment",
-      "RelativePath": "assignment#[.{fingerprint=a9utwb6544}]!.bundle.scp.css.gz",
+      "RelativePath": "assignment#[.{fingerprint=07nz7qhaz9}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -976,8 +976,8 @@
       "RelatedAsset": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\assignment.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "bh71y7jtwo",
-      "Integrity": "HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc=",
+      "Fingerprint": "q0pkwdcdfr",
+      "Integrity": "qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\assignment.bundle.scp.css"
@@ -1065,6 +1065,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\rz5jvtwko8-rhdi7b8zb4.gz",
+      "SourceId": "assignment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/assignment",
+      "RelativePath": "css/bootstrap.min#[.{fingerprint=rhdi7b8zb4}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\bootstrap.min.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "pscayelngs",
+      "Integrity": "Scn3kM3aCYZsqmh1DdDB1CC5yaZyQci8bT+W4whl53I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\bootstrap.min.css"
     },
     {
       "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\sr5qqk3ql8-d7shbmvgxk.gz",
@@ -1375,8 +1396,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "a9utwb6544",
-      "Integrity": "bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k=",
+      "Fingerprint": "07nz7qhaz9",
+      "Integrity": "LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\scopedcss\\bundle\\assignment.styles.css"
@@ -1396,11 +1417,116 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "a9utwb6544",
-      "Integrity": "bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k=",
+      "Fingerprint": "07nz7qhaz9",
+      "Integrity": "LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\assignment.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\farmers.png",
+      "SourceId": "assignment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\",
+      "BasePath": "_content/assignment",
+      "RelativePath": "assets/farmers#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qodyp8sxtb",
+      "Integrity": "ylKjjokmg3AzKG43qLpqmgs8Dr745DrJIiuhqN08gPc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\farmers.png"
+    },
+    {
+      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\GREEN_ENERGY.jpg",
+      "SourceId": "assignment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\",
+      "BasePath": "_content/assignment",
+      "RelativePath": "assets/GREEN_ENERGY#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hy849d4c15",
+      "Integrity": "p7wPJNIEXJb36I+orf5xRM8P1eGpPbFbe4tkiZw2Rnw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\GREEN_ENERGY.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\logo.png",
+      "SourceId": "assignment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\",
+      "BasePath": "_content/assignment",
+      "RelativePath": "assets/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "iq4vpuj6ud",
+      "Integrity": "RjV0xIAM1jDNHPprN30RQkpIIMcHZrIbZ0ifysniD+c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\plug.jpg",
+      "SourceId": "assignment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\",
+      "BasePath": "_content/assignment",
+      "RelativePath": "assets/plug#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5sx7l2xm0x",
+      "Integrity": "xbPzW/zFeMVxHFu34RDG18DI3oUYDLdPb49A3wSwOmI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plug.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\bootstrap.min.css",
+      "SourceId": "assignment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\",
+      "BasePath": "_content/assignment",
+      "RelativePath": "css/bootstrap.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rhdi7b8zb4",
+      "Integrity": "MTikAWrtmMGQgusLmRDb2MtFW+1oyUcoXpfar86jNmk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
     },
     {
       "Identity": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\site.css",
@@ -1417,8 +1543,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "b9sayid5wm",
-      "Integrity": "j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=",
+      "Fingerprint": "cfwtpis95k",
+      "Integrity": "aIqArmeXp6p0IgHhLJn+FHRJLNAsrbQVvhuX5IBYI+s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2728,13 +2854,341 @@
   ],
   "Endpoints": [
     {
-      "Route": "assignment.a9utwb6544.bundle.scp.css",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\pmm6z0m0uh-a9utwb6544.gz",
+      "Route": "assets/farmers.png",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\farmers.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "225278"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ylKjjokmg3AzKG43qLpqmgs8Dr745DrJIiuhqN08gPc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:17:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ylKjjokmg3AzKG43qLpqmgs8Dr745DrJIiuhqN08gPc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/farmers.qodyp8sxtb.png",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\farmers.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "225278"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ylKjjokmg3AzKG43qLpqmgs8Dr745DrJIiuhqN08gPc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:17:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qodyp8sxtb"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/farmers.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ylKjjokmg3AzKG43qLpqmgs8Dr745DrJIiuhqN08gPc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/GREEN_ENERGY.hy849d4c15.jpg",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\GREEN_ENERGY.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40573"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p7wPJNIEXJb36I+orf5xRM8P1eGpPbFbe4tkiZw2Rnw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:08:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hy849d4c15"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/GREEN_ENERGY.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-p7wPJNIEXJb36I+orf5xRM8P1eGpPbFbe4tkiZw2Rnw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/GREEN_ENERGY.jpg",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\GREEN_ENERGY.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40573"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p7wPJNIEXJb36I+orf5xRM8P1eGpPbFbe4tkiZw2Rnw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:08:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p7wPJNIEXJb36I+orf5xRM8P1eGpPbFbe4tkiZw2Rnw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/logo.iq4vpuj6ud.png",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35467"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RjV0xIAM1jDNHPprN30RQkpIIMcHZrIbZ0ifysniD+c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:06:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "iq4vpuj6ud"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RjV0xIAM1jDNHPprN30RQkpIIMcHZrIbZ0ifysniD+c="
+        }
+      ]
+    },
+    {
+      "Route": "assets/logo.png",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35467"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RjV0xIAM1jDNHPprN30RQkpIIMcHZrIbZ0ifysniD+c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:06:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RjV0xIAM1jDNHPprN30RQkpIIMcHZrIbZ0ifysniD+c="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plug.5sx7l2xm0x.jpg",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\plug.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "104098"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xbPzW/zFeMVxHFu34RDG18DI3oUYDLdPb49A3wSwOmI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:14:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5sx7l2xm0x"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plug.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xbPzW/zFeMVxHFu34RDG18DI3oUYDLdPb49A3wSwOmI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plug.jpg",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\assets\\plug.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "104098"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xbPzW/zFeMVxHFu34RDG18DI3oUYDLdPb49A3wSwOmI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:14:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xbPzW/zFeMVxHFu34RDG18DI3oUYDLdPb49A3wSwOmI="
+        }
+      ]
+    },
+    {
+      "Route": "assignment.07nz7qhaz9.bundle.scp.css",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\pmm6z0m0uh-07nz7qhaz9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001862197393"
+          "Quality": "0.000030058915"
         }
       ],
       "ResponseHeaders": [
@@ -2744,15 +3198,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "536"
+          "Value": "33267"
         },
         {
           "Name": "ETag",
-          "Value": "\"HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc=\""
+          "Value": "\"qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2772,13 +3226,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k=\""
+          "Value": "W/\"LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "a9utwb6544"
+          "Value": "07nz7qhaz9"
         },
         {
           "Name": "label",
@@ -2786,12 +3240,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k="
+          "Value": "sha256-LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8="
         }
       ]
     },
     {
-      "Route": "assignment.a9utwb6544.bundle.scp.css",
+      "Route": "assignment.07nz7qhaz9.bundle.scp.css",
       "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\assignment.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2801,7 +3255,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1128"
+          "Value": "281716"
         },
         {
           "Name": "Content-Type",
@@ -2809,11 +3263,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k=\""
+          "Value": "\"LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2823,7 +3277,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "a9utwb6544"
+          "Value": "07nz7qhaz9"
         },
         {
           "Name": "label",
@@ -2831,13 +3285,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k="
+          "Value": "sha256-LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8="
         }
       ]
     },
     {
-      "Route": "assignment.a9utwb6544.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\pmm6z0m0uh-a9utwb6544.gz",
+      "Route": "assignment.07nz7qhaz9.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\pmm6z0m0uh-07nz7qhaz9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2846,7 +3300,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "536"
+          "Value": "33267"
         },
         {
           "Name": "Content-Type",
@@ -2854,11 +3308,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc=\""
+          "Value": "\"qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2876,7 +3330,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "a9utwb6544"
+          "Value": "07nz7qhaz9"
         },
         {
           "Name": "label",
@@ -2884,18 +3338,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc="
+          "Value": "sha256-qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc="
         }
       ]
     },
     {
-      "Route": "assignment.a9utwb6544.styles.css",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\ph4v3kg8er-a9utwb6544.gz",
+      "Route": "assignment.07nz7qhaz9.styles.css",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\ph4v3kg8er-07nz7qhaz9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001862197393"
+          "Quality": "0.000030058915"
         }
       ],
       "ResponseHeaders": [
@@ -2905,15 +3359,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "536"
+          "Value": "33267"
         },
         {
           "Name": "ETag",
-          "Value": "\"HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc=\""
+          "Value": "\"qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2933,13 +3387,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k=\""
+          "Value": "W/\"LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "a9utwb6544"
+          "Value": "07nz7qhaz9"
         },
         {
           "Name": "label",
@@ -2947,12 +3401,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k="
+          "Value": "sha256-LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8="
         }
       ]
     },
     {
-      "Route": "assignment.a9utwb6544.styles.css",
+      "Route": "assignment.07nz7qhaz9.styles.css",
       "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\scopedcss\\bundle\\assignment.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2962,7 +3416,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1128"
+          "Value": "281716"
         },
         {
           "Name": "Content-Type",
@@ -2970,11 +3424,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k=\""
+          "Value": "\"LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2984,7 +3438,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "a9utwb6544"
+          "Value": "07nz7qhaz9"
         },
         {
           "Name": "label",
@@ -2992,13 +3446,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k="
+          "Value": "sha256-LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8="
         }
       ]
     },
     {
-      "Route": "assignment.a9utwb6544.styles.css.gz",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\ph4v3kg8er-a9utwb6544.gz",
+      "Route": "assignment.07nz7qhaz9.styles.css.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\ph4v3kg8er-07nz7qhaz9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3007,7 +3461,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "536"
+          "Value": "33267"
         },
         {
           "Name": "Content-Type",
@@ -3015,11 +3469,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc=\""
+          "Value": "\"qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3037,7 +3491,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "a9utwb6544"
+          "Value": "07nz7qhaz9"
         },
         {
           "Name": "label",
@@ -3045,18 +3499,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc="
+          "Value": "sha256-qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc="
         }
       ]
     },
     {
       "Route": "assignment.bundle.scp.css",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\pmm6z0m0uh-a9utwb6544.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\pmm6z0m0uh-07nz7qhaz9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001862197393"
+          "Quality": "0.000030058915"
         }
       ],
       "ResponseHeaders": [
@@ -3066,15 +3520,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "536"
+          "Value": "33267"
         },
         {
           "Name": "ETag",
-          "Value": "\"HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc=\""
+          "Value": "\"qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3094,13 +3548,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k=\""
+          "Value": "W/\"LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k="
+          "Value": "sha256-LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8="
         }
       ]
     },
@@ -3115,7 +3569,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1128"
+          "Value": "281716"
         },
         {
           "Name": "Content-Type",
@@ -3123,11 +3577,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k=\""
+          "Value": "\"LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3137,13 +3591,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k="
+          "Value": "sha256-LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8="
         }
       ]
     },
     {
       "Route": "assignment.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\pmm6z0m0uh-a9utwb6544.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\pmm6z0m0uh-07nz7qhaz9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3152,7 +3606,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "536"
+          "Value": "33267"
         },
         {
           "Name": "Content-Type",
@@ -3160,11 +3614,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc=\""
+          "Value": "\"qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3182,18 +3636,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc="
+          "Value": "sha256-qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc="
         }
       ]
     },
     {
       "Route": "assignment.styles.css",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\ph4v3kg8er-a9utwb6544.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\ph4v3kg8er-07nz7qhaz9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001862197393"
+          "Quality": "0.000030058915"
         }
       ],
       "ResponseHeaders": [
@@ -3203,15 +3657,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "536"
+          "Value": "33267"
         },
         {
           "Name": "ETag",
-          "Value": "\"HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc=\""
+          "Value": "\"qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3231,13 +3685,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k=\""
+          "Value": "W/\"LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k="
+          "Value": "sha256-LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8="
         }
       ]
     },
@@ -3252,7 +3706,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1128"
+          "Value": "281716"
         },
         {
           "Name": "Content-Type",
@@ -3260,11 +3714,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k=\""
+          "Value": "\"LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3274,13 +3728,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bgrEUVkFZ2lPPRKEf5U+mUXi5O147gAmeXznTSetQ4k="
+          "Value": "sha256-LP+GL8TbtzRGYS7VEWydW3M7Usn0hitvHPaHNIDWAB8="
         }
       ]
     },
     {
       "Route": "assignment.styles.css.gz",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\ph4v3kg8er-a9utwb6544.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\ph4v3kg8er-07nz7qhaz9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3289,7 +3743,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "536"
+          "Value": "33267"
         },
         {
           "Name": "Content-Type",
@@ -3297,11 +3751,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc=\""
+          "Value": "\"qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:32:54 GMT"
+          "Value": "Tue, 13 May 2025 18:08:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3319,18 +3773,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HyreVh1ARLIvzjDaapWr9xGVHGUeDuqVeBWWkbbXSoc="
+          "Value": "sha256-qi9mrsI80JMWXZIYR3PJKSjVo4SGAeQSrtv4PmFgEPc="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\m89whmsg16-b9sayid5wm.gz",
+      "Route": "css/bootstrap.min.css",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\rz5jvtwko8-rhdi7b8zb4.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003134796238"
+          "Quality": "0.000031077133"
         }
       ],
       "ResponseHeaders": [
@@ -3340,15 +3794,152 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "32177"
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"Scn3kM3aCYZsqmh1DdDB1CC5yaZyQci8bT+W4whl53I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:13:24 GMT"
+          "Value": "Tue, 13 May 2025 18:06:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"MTikAWrtmMGQgusLmRDb2MtFW+1oyUcoXpfar86jNmk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MTikAWrtmMGQgusLmRDb2MtFW+1oyUcoXpfar86jNmk="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap.min.css",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "238189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MTikAWrtmMGQgusLmRDb2MtFW+1oyUcoXpfar86jNmk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 18:06:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MTikAWrtmMGQgusLmRDb2MtFW+1oyUcoXpfar86jNmk="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap.min.css.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\rz5jvtwko8-rhdi7b8zb4.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32177"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Scn3kM3aCYZsqmh1DdDB1CC5yaZyQci8bT+W4whl53I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 18:06:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Scn3kM3aCYZsqmh1DdDB1CC5yaZyQci8bT+W4whl53I="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap.min.rhdi7b8zb4.css",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\rz5jvtwko8-rhdi7b8zb4.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000031077133"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32177"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Scn3kM3aCYZsqmh1DdDB1CC5yaZyQci8bT+W4whl53I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 18:06:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3368,13 +3959,174 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"MTikAWrtmMGQgusLmRDb2MtFW+1oyUcoXpfar86jNmk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "rhdi7b8zb4"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MTikAWrtmMGQgusLmRDb2MtFW+1oyUcoXpfar86jNmk="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap.min.rhdi7b8zb4.css",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "238189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MTikAWrtmMGQgusLmRDb2MtFW+1oyUcoXpfar86jNmk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 18:06:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rhdi7b8zb4"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MTikAWrtmMGQgusLmRDb2MtFW+1oyUcoXpfar86jNmk="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap.min.rhdi7b8zb4.css.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\rz5jvtwko8-rhdi7b8zb4.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32177"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Scn3kM3aCYZsqmh1DdDB1CC5yaZyQci8bT+W4whl53I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 18:06:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rhdi7b8zb4"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap.min.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Scn3kM3aCYZsqmh1DdDB1CC5yaZyQci8bT+W4whl53I="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.cfwtpis95k.css",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\m89whmsg16-cfwtpis95k.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001569858713"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "636"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"veJ/tbuxVRwXxlvOR1tX6aJAL/pGGVasppBYkhwTItU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 19:21:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"aIqArmeXp6p0IgHhLJn+FHRJLNAsrbQVvhuX5IBYI+s=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cfwtpis95k"
         },
         {
           "Name": "label",
@@ -3382,12 +4134,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-aIqArmeXp6p0IgHhLJn+FHRJLNAsrbQVvhuX5IBYI+s="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css",
+      "Route": "css/site.cfwtpis95k.css",
       "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3397,7 +4149,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "1772"
         },
         {
           "Name": "Content-Type",
@@ -3405,11 +4157,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"aIqArmeXp6p0IgHhLJn+FHRJLNAsrbQVvhuX5IBYI+s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:13:24 GMT"
+          "Value": "Tue, 13 May 2025 19:21:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3419,7 +4171,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "cfwtpis95k"
         },
         {
           "Name": "label",
@@ -3427,13 +4179,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-aIqArmeXp6p0IgHhLJn+FHRJLNAsrbQVvhuX5IBYI+s="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css.gz",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\m89whmsg16-b9sayid5wm.gz",
+      "Route": "css/site.cfwtpis95k.css.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\m89whmsg16-cfwtpis95k.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3442,7 +4194,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "636"
         },
         {
           "Name": "Content-Type",
@@ -3450,11 +4202,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"veJ/tbuxVRwXxlvOR1tX6aJAL/pGGVasppBYkhwTItU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:13:24 GMT"
+          "Value": "Tue, 13 May 2025 19:21:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3472,7 +4224,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "cfwtpis95k"
         },
         {
           "Name": "label",
@@ -3480,18 +4232,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y="
+          "Value": "sha256-veJ/tbuxVRwXxlvOR1tX6aJAL/pGGVasppBYkhwTItU="
         }
       ]
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\m89whmsg16-b9sayid5wm.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\m89whmsg16-cfwtpis95k.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003134796238"
+          "Quality": "0.001569858713"
         }
       ],
       "ResponseHeaders": [
@@ -3501,15 +4253,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "636"
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"veJ/tbuxVRwXxlvOR1tX6aJAL/pGGVasppBYkhwTItU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:13:24 GMT"
+          "Value": "Tue, 13 May 2025 19:21:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3529,13 +4281,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"aIqArmeXp6p0IgHhLJn+FHRJLNAsrbQVvhuX5IBYI+s=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-aIqArmeXp6p0IgHhLJn+FHRJLNAsrbQVvhuX5IBYI+s="
         }
       ]
     },
@@ -3550,7 +4302,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "1772"
         },
         {
           "Name": "Content-Type",
@@ -3558,11 +4310,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"aIqArmeXp6p0IgHhLJn+FHRJLNAsrbQVvhuX5IBYI+s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:13:24 GMT"
+          "Value": "Tue, 13 May 2025 19:21:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3572,13 +4324,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-aIqArmeXp6p0IgHhLJn+FHRJLNAsrbQVvhuX5IBYI+s="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\m89whmsg16-b9sayid5wm.gz",
+      "AssetFile": "C:\\Users\\lab_services_student\\Desktop\\ebProgAssignment\\EB_assignment\\assignment\\obj\\Debug\\net9.0\\compressed\\m89whmsg16-cfwtpis95k.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3587,7 +4339,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "636"
         },
         {
           "Name": "Content-Type",
@@ -3595,11 +4347,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"veJ/tbuxVRwXxlvOR1tX6aJAL/pGGVasppBYkhwTItU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 17:13:24 GMT"
+          "Value": "Tue, 13 May 2025 19:21:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3617,7 +4369,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y="
+          "Value": "sha256-veJ/tbuxVRwXxlvOR1tX6aJAL/pGGVasppBYkhwTItU="
         }
       ]
     },

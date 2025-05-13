@@ -140,7 +140,6 @@ C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\scopedcss\bundle\assignment.styles.css
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\scopedcss\projectbundle\assignment.bundle.scp.css
-C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\m89whmsg16-b9sayid5wm.gz
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\m021hs6kn1-61n19gt1b8.gz
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\m6thfc5f8a-xtxxf3hu2r.gz
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\i6ut9ctrlm-bqjiyaj88i.gz
@@ -202,8 +201,6 @@ C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\3o616zx6cd-muycvpuwrr.gz
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\kwli1kcq1a-87fc7y1x7t.gz
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\2imuxy5du7-mlv21k5csn.gz
-C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\ph4v3kg8er-a9utwb6544.gz
-C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\pmm6z0m0uh-a9utwb6544.gz
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -219,3 +216,7 @@ C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\assignment.pdb
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\assignment.genruntimeconfig.cache
 C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\ref\assignment.dll
+C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\ph4v3kg8er-07nz7qhaz9.gz
+C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\pmm6z0m0uh-07nz7qhaz9.gz
+C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\rz5jvtwko8-rhdi7b8zb4.gz
+C:\Users\lab_services_student\Desktop\ebProgAssignment\EB_assignment\assignment\obj\Debug\net9.0\compressed\m89whmsg16-cfwtpis95k.gz
