@@ -59,7 +59,7 @@
 
                 switch (operation.toLowerCase()) {
                     case "equals":
-                        return productValue.toString().toLowerCase() === value.toString().toLowerCase();
+                        return productValue.toLowerCase().includes(value.toLowerCase());
                     case "less than":
                         if (isProductValueNumeric && isValueNumeric) {
                             return parsedProductValue < parsedValue;

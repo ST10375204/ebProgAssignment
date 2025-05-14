@@ -1,6 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "AgriEnergy – Home";
-    Layout = "_Layout";
+  ViewData["Title"] = "AgriEnergy – Home";
+  Layout = "_Layout";
 }
 
 <section class="landing-page d-flex align-items-center gap-4 p-4">
@@ -30,15 +30,26 @@
   <!-- Text Content -->
   <div class="col-md-6 text-content">
     <h1>Welcome to AgriEnergy</h1>
-    <p>At AgriEnergy, we aim to connect farmers with individuals and businesses dedicated to creating a greener, more sustainable future. Join our network of eco-conscious professionals to exchange resources, ideas, and initiatives that support green energy solutions for agriculture.</p>
+    <p>At AgriEnergy, we aim to connect farmers with individuals and businesses dedicated to creating a greener, more
+      sustainable future. Join our network of eco-conscious professionals to exchange resources, ideas, and initiatives
+      that support green energy solutions for agriculture.</p>
     <h4>Our Mission:</h4>
-    <p>Empowering farmers to adopt green technologies and connect with green energy enthusiasts. Together, we can create a brighter, more sustainable future for agriculture.</p>
+    <p>Empowering farmers to adopt green technologies and connect with green energy enthusiasts. Together, we can create
+      a brighter, more sustainable future for agriculture.</p>
     <div class="d-flex gap-2 mt-3">
-      <a class="btn btn-lg btn-dark" asp-area="" asp-controller="Home" asp-action="Index">Join Us Today</a>
-      <a href="#" class="btn btn-lg btn-outline-secondary">About</a>
-      <a href="#" class="btn btn-lg btn-outline-secondary">Contact Us</a>
+      <div class="d-flex gap-2 mt-3">
+        <a class="btn btn-lg btn-dark" asp-area="" asp-controller="Home" asp-action="Index">Join Us Today</a>
+
+        <button type="button" class="btn btn-lg btn-outline-secondary" onclick="alert('In Development – Coming Soon')">
+          About
+        </button>
+
+        <button type="button" class="btn btn-lg btn-outline-secondary" onclick="alert('In Development – Coming Soon')">
+          Contact Us
+        </button>
+
+      </div>
     </div>
-  </div>
 </section>
 
 <style>
