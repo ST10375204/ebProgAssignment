@@ -101,7 +101,7 @@ The application will be available at `https://localhost:5001`.
 
 ## Usage
 
-1. **Browse Products**: Visit the home page to see all products.
+1. **Browse Products**: Visit the Display Products page to see all products.
 2. **Filter via Chatbot**: Use the chat widget to type queries like "price greater than 50" or "name contains Jam".
 3. **CRUD Operations**:
 
