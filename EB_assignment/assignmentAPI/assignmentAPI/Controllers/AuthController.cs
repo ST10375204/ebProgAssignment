@@ -23,24 +23,12 @@ namespace assignmentAPI.Controllers
         FirebaseAuthProvider auth;
         private readonly IConfiguration _config;
       
-        string credentials;
         private readonly AssignmentDbContext _context;
         public AuthController(IConfiguration config, AssignmentDbContext context)
         {
             _config = config;
             _context = context;
-
-            // Env Vars check
-            Console.WriteLine("FirebaseMathApp: " + Environment.GetEnvironmentVariable("FirebaseMathApp"));
-            Console.WriteLine("google_appli_creds: " + Environment.GetEnvironmentVariable("google_appli_creds"));
-            Console.WriteLine("firestoreID: " + Environment.GetEnvironmentVariable("firestoreID"));
-
-            // Connection string check
-            Console.WriteLine("AssignmentDb Connection String: " + _config.GetConnectionString("AssignmentDb"));
-
             auth = new FirebaseAuthProvider(new FirebaseConfig(Environment.GetEnvironmentVariable("FirebaseMathApp")));
-            credentials = Environment.GetEnvironmentVariable("google_appli_creds");
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", credentials);
         }
 
 
