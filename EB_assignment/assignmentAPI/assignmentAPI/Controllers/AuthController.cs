@@ -28,7 +28,7 @@ namespace assignmentAPI.Controllers
         {
             _config = config;
             _context = context;
-            auth = new FirebaseAuthProvider(new FirebaseConfig(Environment.GetEnvironmentVariable("FirebaseMathApp")));
+          auth = new FirebaseAuthProvider(new FirebaseConfig("AIzaSyDchoNrZSGuyLr_TmXimP6nDPZ2Dg0Zx7c"));
         }
 
 
@@ -109,7 +109,7 @@ namespace assignmentAPI.Controllers
             {
                 var fbAuthLink = await auth.SignInWithEmailAndPasswordAsync(login.Email, login.Password);
                 string currentUserId = fbAuthLink.User.LocalId;
-
+                
                 if (currentUserId != null)
                 {
                     return Ok(new AuthResponse(currentUserId));

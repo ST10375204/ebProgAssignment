@@ -13,11 +13,19 @@
         <span asp-validation-for="itemName" class="text-danger"></span>
     </div>
 
-    <div class="mb-3">
+     <div class="mb-3">
         <label class="form-label">Category</label>
-        <input asp-for="itemCategory" class="form-control" />
-        <span asp-validation-for="itemCategory" class="text-danger"></span>
+        <select asp-for="itemCategory" class="form-select">
+        <option value="">-- Select Category --</option>
+        <option value="Vegetable">Vegetable</option>
+        <option value="Fruit">Fruit</option>
+        <option value="Produce">Produce</option>
+        <option value="Animal Produce">Animal Produce</option>
+        <option value="Product">Product</option>
+        </select>
+         <span asp-validation-for="itemCategory" class="text-danger"></span>
     </div>
+
 
     <div class="mb-3">
         <label class="form-label">Description</label>
