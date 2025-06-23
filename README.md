@@ -16,6 +16,7 @@ An ASP.NET Core MVC application for managing agricultural products with role-bas
 * [Running the Application](#running-the-application)
 * [Usage](#usage)
 * [Project Structure](#project-structure)
+* [ Dialogflow Agent ID Disclosure](#dialogflow-agent-ID-Disclosure)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
@@ -119,12 +120,15 @@ The application will be available at `https://localhost:5001`.
 ```
 
 ## Dialogflow Agent ID Disclosure
-This project uses Google Dialogflow's <df-messenger> component to enable chatbot functionality. The component requires the agent ID to be present in the frontend HTML as an attribute (i.e. agent-id="..."), which means the ID is visible in the browser's developer tools.
+This project uses Google Dialogflow's <df-messenger> component to enable chatbot functionality. 
+The component requires the agent ID to be present in the frontend HTML as an attribute (i.e. agent-id="..."), which means the ID is visible in the browser's developer tools.
 
 Why it's visible
+
 Due to how <df-messenger> is implemented by Google, the agent-id must be rendered on the client side. This makes it impossible to completely "hide" the ID from users once the chatbot loads.
 
 Why this is acceptable
+
 The agent ID is not a secret — it's designed to be public.
 
 Dialogflow documentation confirms that agents are exposed when embedded in public sites.
