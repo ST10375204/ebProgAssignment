@@ -127,15 +127,11 @@ Why it's visible
 
 Due to how <df-messenger> is implemented by Google, the agent-id must be rendered on the client side. This makes it impossible to completely "hide" the ID from users once the chatbot loads.
 
-Why this is acceptable
-
-The agent ID is not a secret — it's designed to be public.
-
-Dialogflow documentation confirms that agents are exposed when embedded in public sites.
-
-No sensitive information (e.g., API keys, credentials, backend logic) is accessible via the agent ID.
-
-The backend remains protected — the chatbot can only return intents and responses configured in Dialogflow.
+**Why this is acceptable**
+1. The agent ID is not a secret — it's designed to be public.
+2. Dialogflow documentation confirms that agents are exposed when embedded in public sites.
+3. No sensitive information (e.g., API keys, credentials, backend logic) is accessible via the agent ID.
+4. The backend remains protected — the chatbot can only return intents and responses configured in Dialogflow.
 
 ## Contributing
 
