@@ -124,9 +124,11 @@ This project uses Google Dialogflow's <df-messenger> component to enable chatbot
 The component requires the agent ID to be present in the frontend HTML as an attribute (`i.e. agent-id="..."`), which means the ID is visible in the browser's developer tools.
 
 **Why it's visible**
+
 Due to how (`<df-messenger>)`) is implemented by Google (https://cloud.google.com/dialogflow/es/docs/integrations/dialogflow-messenger), the agent-id must be rendered on the client side. This makes it impossible to completely "hide" the ID from users once the chatbot loads.
 
 **Why this is acceptable**
+
 1. The agent ID is not a secret — it's designed to be public.
 2. Dialogflow documentation confirms that agents are exposed when embedded in public sites.
 3. No sensitive information (e.g., API keys, credentials, backend logic) is accessible via the agent ID.
