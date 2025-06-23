@@ -118,6 +118,21 @@ The application will be available at `https://localhost:5001`.
 /DatabaseScripts  - SQL schema and seed data
 ```
 
+## Dialogflow Agent ID Disclosure
+This project uses Google Dialogflow's <df-messenger> component to enable chatbot functionality. The component requires the agent ID to be present in the frontend HTML as an attribute (i.e. agent-id="..."), which means the ID is visible in the browser's developer tools.
+
+Why it's visible
+Due to how <df-messenger> is implemented by Google, the agent-id must be rendered on the client side. This makes it impossible to completely "hide" the ID from users once the chatbot loads.
+
+Why this is acceptable
+The agent ID is not a secret — it's designed to be public.
+
+Dialogflow documentation confirms that agents are exposed when embedded in public sites.
+
+No sensitive information (e.g., API keys, credentials, backend logic) is accessible via the agent ID.
+
+The backend remains protected — the chatbot can only return intents and responses configured in Dialogflow.
+
 ## Contributing
 
 1. Fork the repository
